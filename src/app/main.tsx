@@ -15,9 +15,12 @@ const Main = () => {
       transition: {
         type: "spring",
         delay: 0.5,
+        duration: 1,
+        ease: "easeInOut",
       },
     },
   };
+
   const containerVaris = {
     hidden: {
       opacity: 0.5,
@@ -29,6 +32,8 @@ const Main = () => {
       transition: {
         type: "spring",
         delay: 0.5,
+        duration: 1,
+        ease: "easeInOut",
       },
     },
   };
@@ -36,14 +41,12 @@ const Main = () => {
   const buttonVariants = {
     hover: {
       scale: 1.1,
-
       transition: {
         duration: 0.3,
         yoyo: Infinity,
       },
     },
   };
-
   return (
     <>
       <section className="">
@@ -56,8 +59,8 @@ const Main = () => {
           >
             <Image
               className="image-area shadow-md hover:scale-105 ease-in-out rounded-xl transition mx-auto duration-300  md:min-w-auto"
-              src="/assets/img/Services1.jpg"
               alt="bus image"
+              src="/img/services1.jpg"
               width={200}
               height={200}
             />
