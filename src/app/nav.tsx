@@ -31,7 +31,7 @@ const Nav = () => {
   }, [menuRef, setOpen]);
 
   return (
-    <header className="relative w-full z-[999] hover:shadow-xl">
+    <header className="relative w-full z-[1000] hover:shadow-xl">
       <div className="bg-white/60 shadow-xl p-4 ">
         <nav className="flex justify-between items-center w-[95%] md:w-[90%]  mx-auto p-1 my-auto  ">
           <div className=" font-bold text-2xl text-blue-900 ">
@@ -88,9 +88,9 @@ const Nav = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {open === true ? (
-                  <FaTimes className=" text-2xl cursor-pointer text-blue-900 transition-all duration-500 ease-in-out border-none md:hidden hover:shadow-teal-400 active:text-blue-950" />
+                  <FaTimes className=" text-2xl cursor-pointer text-blue-900 transition-all duration-500 ease-in-out border-none md:hidden hover:shadow-teal-400 active:text-blue-950 active:outline-none" />
                 ) : (
-                  <TiThMenu className=" text-2xl text-blue-900 border-none cursor-pointer md:hidden hover:shadow-teal-200 hover:shadow-2xl active:text-blue-950" />
+                  <TiThMenu className=" text-2xl text-blue-900 border-none cursor-pointer md:hidden hover:shadow-teal-200 hover:shadow-2xl active:text-blue-950 active:outline-none" />
                 )}
               </motion.button>
             </div>
@@ -102,7 +102,7 @@ const Nav = () => {
             <motion.div
               ref={menuRef}
               className=" 
-              md:hidden absolute bg-black/80 left-0 right-0 mt-3 text-center rounded-b-2xl p-6 z-[999]  text-white/80"
+              md:hidden absolute overflow-hidden backdrop-blur-sm bg-black/95 left-0 right-0 mt-3 text-center rounded-b-2xl p-6 z-[999] hover:overflow-hidden"
               initial={{ opacity: 0, y: "-100%", zIndex: "-1" }}
               animate={{
                 opacity: 1,
@@ -131,7 +131,7 @@ const Nav = () => {
                   return (
                     <motion.li
                       onClick={() => setOpen(false)}
-                      className=" hover:text-teal-600 hover:rounded-lg p-1 ease-in-out "
+                      className="hover:rounded-lg p-1 ease-in-out  hover:text-blue-900  "
                       whileHover={{ scale: 1.03, originX: 0 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       key={id}

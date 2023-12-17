@@ -31,9 +31,14 @@ body {
 .nav {
   color: white;
   background: rgba(255, 255, 255, 0.037);
-  /* background-image: url(./assets/img/Hero-bg.png); */
+  /*  */
   backdrop-filter: blur(40px);
 }
-/* .container {
-  @apply w-[80%] mx-auto;
-} */
+
+.logo:hover {
+  box-shadow: 0 0 20px rgba(0, 128, 255, 0.9);
+}
+.footer {
+  background-image: url(./assets/img/process-bg.png);
+  background-color: rgba(6, 186, 252, 0.042);
+}
