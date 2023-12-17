@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  background-image: url(./assets/img/Hero-bg.png);
+  background-image: url(./assets/Hero-bg.png);
   /* background-color: #08232a; */
 }
 
@@ -39,6 +39,6 @@ body {
   box-shadow: 0 0 20px rgba(0, 128, 255, 0.9);
 }
 .footer {
-  background-image: url(./assets/img/process-bg.png);
+  background-image: url(./assets/process-bg.png);
   background-color: rgba(6, 186, 252, 0.042);
 }

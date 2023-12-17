@@ -1,39 +1,32 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
 const Main = () => {
   const containerVariants = {
     hidden: {
-      opacity: 0.5,
-      x: "10vw",
+      opacity: 0,
+      x: "5vw",
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
         type: "spring",
-        delay: 0.5,
-        duration: 1,
-        ease: "easeInOut",
       },
     },
   };
-
   const containerVaris = {
     hidden: {
-      opacity: 0.5,
-      x: "-10vw",
+      opacity: 0,
+      x: "-5vw",
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
         type: "spring",
-        delay: 0.5,
-        duration: 1,
-        ease: "easeInOut",
       },
     },
   };
@@ -60,8 +53,8 @@ const Main = () => {
             <Image
               className="image-area shadow-md hover:scale-105 ease-in-out rounded-xl transition mx-auto duration-300  md:min-w-auto"
               alt="bus image"
-              src="/img/services1.jpg"
-              width={200}
+              src="/services1.jpg"
+              width={300}
               height={200}
             />
           </motion.div>
@@ -110,11 +103,13 @@ const Main = () => {
 
         <div className="md:grid grid-cols-2  w-[80%] md:w-[75%] mx-auto md:space-x-4">
           <div className="bg-gray-200/10 flex-grow-0 text-center p-6 m-4  mx-auto rounded-3xl text-white/80">
-            <img
+            <Image
               className="w-[50%] h-auto mx-auto rounded-xl shadow-2xl mb-8 hover:scale-110 ease-in-out transition duration-300 cursor-pointer"
-              src="{imagez}"
-              alt=""
-            />{" "}
+              src="/services1.jpg"
+              alt="Bus Image"
+              width={300}
+              height={200}
+            />
             <div>
               <h1 className="font-semibold mb-4">
                 Road transport Reservations
@@ -134,8 +129,10 @@ const Main = () => {
           <div className=" bg-gray-200/10 flex-grow-0 text-center p-6 m-4  mx-auto rounded-3xl text-white/80 ">
             <img
               className="w-[50%] h-auto mx-auto mb-8 rounded-xl shadow-2xl hover:scale-110 ease-in-out transition duration-300 cursor-pointer"
-              src="{imag}"
-              alt=""
+              src="/services 2.jpg"
+              alt="Aeroplane Image"
+              width={300}
+              height={200}
             />
             <div>
               <h1 className="font-semibold mb-4">Flight Reservations</h1>
