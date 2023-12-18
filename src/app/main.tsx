@@ -44,7 +44,7 @@ const Main = () => {
   return (
     <AnimatePresence>
       <>
-        <section className="overflow-hidden overflow-x-hidden mx-auto">
+        <section className="overflow-hidden overflow-x-hidden">
           <div className=" mx-auto w-[80%] md:w-[75%]  text-white  md:items-center md:justify-center   md:flex md:flex-row-reverse mt-12">
             <motion.div
               className="md:w-1/2 md:ml-4 "
