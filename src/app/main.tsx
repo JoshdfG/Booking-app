@@ -56,7 +56,7 @@ const Main = () => {
                 className="image-area shadow-md hover:scale-105 ease-in-out rounded-xl transition mx-auto duration-300  md:min-w-auto"
                 src="/services1.jpg"
                 alt="bus image"
-                width={300}
+                width={400}
                 height={200}
               />
             </motion.div>
