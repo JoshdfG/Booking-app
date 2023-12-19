@@ -79,7 +79,7 @@ const Main = () => {
                 corrupti at excepturi facilis deleniti delectus quia!
               </p>
               <div className="text-center mt-4 font-semibold sm:mb-4">
-                <a href="/admin">
+                <link href="/admin">
                   <motion.button
                     variants={buttonVariants}
                     whileHover="hover"
@@ -87,7 +87,7 @@ const Main = () => {
                   >
                     Become an Admin
                   </motion.button>
-                </a>
+                </link>
               </div>
             </motion.div>
           </div>
@@ -120,11 +120,11 @@ const Main = () => {
                   Velit exercitationem nesciunt error alias ducimus aperiam
                   rerum ab facere facilis ipsam?
                 </p>
-                <a href="/bus">
+                <link href="/bus">
                   <button className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600">
                     Reserve a seat
                   </button>
-                </a>
+                </link>
               </div>
             </div>
             <div className=" bg-gray-200/10 flex-grow-0 text-center p-6 m-4  mx-auto rounded-3xl text-white/80 ">

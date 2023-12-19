@@ -142,9 +142,9 @@ const Admin = () => {
           <div>
             <p className=" mt-6 mb-8">
               Already have an account ?
-              <Link href="" to="/login" className="hover:text-blue-400 ml-1">
+              <a href="/login" className="hover:text-blue-400 ml-1">
                 Login
-              </Link>
+              </a>
             </p>
           </div>
         </div>
