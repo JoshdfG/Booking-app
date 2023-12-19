@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import NotCompleted from "./NotCompleted";
-import Loading from "./Loading";
-import Completed from "./Completed";
+import NotCompleted from "./notCompleted";
+import Loading from "./loading";
+import Completed from "./completed";
 import imag from "/Users/hp/Transport/src/assets/img/bus.jpg";
 
 const Bus = () => {
