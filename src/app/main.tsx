@@ -143,11 +143,11 @@ const Main = () => {
                   rerum ab facere facilis ipsam?
                 </p>
               </div>
-              <a href="/plane">
+              <link href="/plane">
                 <button className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600">
                   Reserve a seat
                 </button>
-              </a>
+              </link>
             </div>
           </div>
         </section>

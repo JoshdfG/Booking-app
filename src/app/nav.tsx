@@ -54,11 +54,11 @@ const Nav = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                     key={id}
                   >
-                    <a href={url}>{text}</a>
+                    <Link href={url}>{text}</Link>
                   </motion.li>
                 );
               })}
-              <a href="/login">
+              <Link href="/login">
                 <motion.button
                   className="logo bg-blue-950 px-3 py-1 rounded-lg text-white mr-6 hover:bg-blue-900 tracking-wider "
                   whileHover={{ scale: 1.1, originX: 0 }}
@@ -66,11 +66,11 @@ const Nav = () => {
                 >
                   Login
                 </motion.button>
-              </a>
+              </Link>
             </ul>
             <div className="flex justify-center align-middle">
               <div>
-                <a href="/login">
+                <Link href="/login">
                   <motion.button
                     className="bg-blue-950 px-3 py-1 rounded-lg text-white mr-2  hover:bg-blue-900  md:hidden tracking-wider logo active:outline-none active:bg-green-950"
                     whileHover={{ scale: 1.05, originX: 0 }}
@@ -78,7 +78,7 @@ const Nav = () => {
                   >
                     Login
                   </motion.button>
-                </a>
+                </Link>
               </div>
               <motion.button
                 className="border-none"
@@ -136,7 +136,7 @@ const Nav = () => {
                       transition={{ type: "spring", stiffness: 300 }}
                       key={id}
                     >
-                      <a href={url}>{text}</a>
+                      <Link href={url}>{text}</Link>
                     </motion.li>
                   );
                 })}
