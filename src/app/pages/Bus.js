@@ -2,10 +2,9 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import NotCompleted from "./notCompleted";
-import Loading from "./loading";
-import Completed from "./completed";
-import imag from "/Users/hp/Transport/src/assets/img/bus.jpg";
+import NotCompleted from "/notCompleted";
+import Loading from "/loading";
+import Completed from "/completed";
 
 const Bus = () => {
   const [isChecked1, setIsChecked1] = useState(false);

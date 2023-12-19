@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import NotCompleted from "./NotCompleted";
-import Loading from "./Loading";
-import Completed from "./Completed";
+import NotCompleted from "/Users/hp/next-transport/src/app/pages/notCompleted";
+import Loading from "/loading";
+import Completed from "./completed";
 const Plane = () => {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
