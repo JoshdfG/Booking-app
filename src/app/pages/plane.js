@@ -1,7 +1,8 @@
+"use client";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NotCompleted from "/Users/hp/next-transport/src/app/pages/notCompleted";
-import Loading from "/loading";
+import Loading from "./loading";
 import Completed from "./completed";
 const Plane = () => {
   const [isChecked1, setIsChecked1] = useState(false);

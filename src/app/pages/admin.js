@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 const Admin = () => {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isLoading1, setIsLoading1] = useState(false);
