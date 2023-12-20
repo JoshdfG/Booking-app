@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-// import { Reveal } from "./Reveal";
 
 export default function Home() {
   const containerVariants = {
