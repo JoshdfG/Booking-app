@@ -1,7 +1,7 @@
 // @react-server-client-only
 import Image from "next/image";
-import Nav from "./nav";
 import Body from "./main";
+import Nav from "./nav";
 import Footer from "./footer";
 
 export default function Home() {

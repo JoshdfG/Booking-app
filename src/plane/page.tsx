@@ -2,12 +2,10 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Image from "next/image";
-import NotCompleted from "./notCompleted";
-import Loading from "./loading";
-import Completed from "./completed";
-
-const Bus: React.FC = () => {
+import NotCompleted from "/Users/hp/next-transport/src/app/pages/notCompleted";
+import Loading from "../app/pages/loading";
+import Completed from "../app/pages/completed";
+const Plane = () => {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isLoading1, setIsLoading1] = useState(false);
@@ -50,26 +48,18 @@ const Bus: React.FC = () => {
     setSelectedDate(date);
   };
   return (
-    <section className="min-h-[100dvh] w-[80%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
+    <section className="min-h-[100dvh] cn-element w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
       <div>
-        <div>
-          <div className="text-center">
-            <h1 className="text-3xl mt-4 mb-4 ">Bus seats</h1>
-            <div>
-              <Image src="services1.jpg" alt="bus img" className="rounded-lg" />
-            </div>
-          </div>
-        </div>
-
+        <h1>Book flights</h1>
         <article>
-          <div className="card bg-gray-200/10 text-center p-6 m-4  mx-auto rounded-2xl text-white/80 ">
+          <div className="card w-[90%] bg-gray-200/10 text-center p-6 m-4  mx-auto rounded-2xl text-white/80 ">
             <div>
               <h1 className="font-semibold capitalize text-2xl mb-16 mt-8">
-                Reserve your Seats Today
+                Reserve your flights & Boarding Today
               </h1>
             </div>
             <form>
-              <div className="my-8 space-x-3 ">
+              <div className="my-8 space-x-6 ">
                 <div className="links-container flex align-middle justify-center">
                   <label htmlFor="check1" className="check-box">
                     <input
@@ -108,30 +98,30 @@ const Bus: React.FC = () => {
                   <span className="mr-2">One Way</span>
                 </div>
               </div>
+              <label htmlFor="" className="">
+                <input
+                  type="text"
+                  required
+                  placeholder="Take off location"
+                  className="textarea w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-10 outline-none text-white"
+                />
+              </label>
+              <label htmlFor="">
+                <input
+                  type="text"
+                  placeholder="Destination"
+                  required
+                  className="textarea w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                />
+              </label>
               <div>
-                <label htmlFor="" className="">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Take off location"
-                    className="textarea w-[90%] p-2 rounded-lg bg-slate-500 mb-10 outline-none text-white"
-                  />
-                </label>
-                <label htmlFor="">
-                  <input
-                    type="text"
-                    placeholder="Destination"
-                    required
-                    className="textarea w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
-                  />
-                </label>
                 <div className="">
                   <label htmlFor="" className="">
                     <input
                       type="text"
                       required
                       placeholder="First Name"
-                      className=" w-[90%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                      className=" w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
                   </label>
 
@@ -140,7 +130,7 @@ const Bus: React.FC = () => {
                       type="text"
                       placeholder="Last Name"
                       required
-                      className=" w-[90%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                      className=" w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
                   </label>
                 </div>
@@ -182,4 +172,4 @@ const Bus: React.FC = () => {
   );
 };
 
-export default Bus;
+export default Plane;

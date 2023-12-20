@@ -1,6 +1,15 @@
 "use client";
-import React, { useState } from "react";
-const Admin = () => {
+import React, { useState, useRef } from "react";
+
+export default function Admin() {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleButtonClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
   const [isChecked1, setIsChecked1] = useState(false);
   const [isLoading1, setIsLoading1] = useState(false);
 
@@ -34,6 +43,7 @@ const Admin = () => {
           <div>
             <label htmlFor="">
               <input
+                ref={inputRef}
                 type="text"
                 placeholder="Company Name"
                 required
@@ -42,6 +52,7 @@ const Admin = () => {
             </label>
             <label htmlFor="">
               <input
+                ref={inputRef}
                 type="text"
                 required
                 placeholder="E-mail"
@@ -50,6 +61,7 @@ const Admin = () => {
             </label>
             <label htmlFor="">
               <input
+                ref={inputRef}
                 type="Password"
                 placeholder="Blockchain Wallet"
                 required
@@ -58,6 +70,7 @@ const Admin = () => {
             </label>
             <label htmlFor="">
               <input
+                ref={inputRef}
                 type="Password"
                 placeholder="Password"
                 required
@@ -69,6 +82,7 @@ const Admin = () => {
             <div className="links-container flex align-middle justify-center mb-4">
               <label htmlFor="check1" className="check-box">
                 <input
+                  ref={inputRef}
                   id="check1"
                   type="checkbox"
                   className="checkbox hidden"
@@ -135,7 +149,10 @@ const Admin = () => {
               <span className="mr-2 ">I Agree to the terms & Conditions</span>
             </div>
           </div>
-          <button className="btn bg-blue-800 w-[80%] p-2 rounded-xl" ref="#">
+          <button
+            className="logo bg-blue-900 w-[80%] p-2 rounded-xl active:bg-blue-950"
+            onClick={handleButtonClick}
+          >
             Register
           </button>
           <div>
@@ -150,6 +167,4 @@ const Admin = () => {
       </div>
     </>
   );
-};
-
-export default Admin;
+}

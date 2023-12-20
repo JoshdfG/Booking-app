@@ -34,6 +34,9 @@ body {
   /*  */
   backdrop-filter: blur(40px);
 }
+.brand:hover {
+  box-shadow: 0 0 20px rgb(151, 81, 157);
+}
 
 .logo:hover {
   box-shadow: 0 0 20px rgba(0, 128, 255, 0.9);
@@ -41,4 +44,37 @@ body {
 .footer {
   background-image: url(./assets/process-bg.png);
   background-color: rgba(6, 186, 252, 0.042);
+}
+.check-box {
+  margin-right: 4px;
+  background: transparent;
+  display: flex;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 100ms ease-in;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  animation-duration: 1000ms;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.check-box:focus #not-completed-icon circle {
+  fill: #d9d9d9;
+  stroke-dasharray: 0 0;
+}
+.check-box:hover #not-completed-icon circle {
+  stroke-dasharray: 0 0;
+  transition: all 100ms ease-in-out;
 }
