@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NotCompleted from "/Users/hp/next-transport/src/app/pages/notCompleted";
@@ -30,15 +31,21 @@ const Plane = () => {
       }, 200);
     }
   };
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-  const handleDateChange = (date) => {
+  const handleDateChange = (
+    date: Date | null,
+    event: React.SyntheticEvent<any, Event> | undefined
+  ) => {
     setSelectedDate(date);
   };
-  const [selectedDate1, setSelectedDate1] = useState(null);
+  const [selectedDate1, setSelectedDate1] = useState<Date | null>(null);
 
-  const handleDateChange1 = (date) => {
-    setSelectedDate1(date);
+  const handleDateChange1 = (
+    date: Date | null,
+    event: React.SyntheticEvent<any, Event> | undefined
+  ) => {
+    setSelectedDate(date);
   };
   return (
     <section className="min-h-[100dvh] cn-element w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
@@ -155,10 +162,7 @@ const Plane = () => {
               </div>
             </form>
             <div className="flex justify-between mx-auto w-[80%]"></div>
-            <button
-              className="btn bg-blue-800 w-[80%] p-2  rounded-xl"
-              href="#"
-            >
+            <button className="btn bg-blue-800 w-[80%] p-2  rounded-xl">
               Submit
             </button>
           </div>

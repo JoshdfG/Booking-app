@@ -98,7 +98,7 @@ const Admin = () => {
                   </svg>
                 ) : isLoading1 ? (
                   <svg
-                    class="loading "
+                    className="loading "
                     id="loading"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -135,7 +135,7 @@ const Admin = () => {
               <span className="mr-2 ">I Agree to the terms & Conditions</span>
             </div>
           </div>
-          <button className="btn bg-blue-800 w-[80%] p-2 rounded-xl" href="#">
+          <button className="btn bg-blue-800 w-[80%] p-2 rounded-xl" ref="#">
             Register
           </button>
           <div>

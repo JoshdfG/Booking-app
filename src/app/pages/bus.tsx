@@ -1,12 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import NotCompleted from "/notCompleted";
-import Loading from "/loading";
-import Completed from "/completed";
+import Image from "next/image";
+import NotCompleted from "./notCompleted";
+import Loading from "./loading";
+import Completed from "./completed";
 
-const Bus = () => {
+const Bus: React.FC = () => {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isLoading1, setIsLoading1] = useState(false);
@@ -32,15 +33,21 @@ const Bus = () => {
       }, 200);
     }
   };
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-  const handleDateChange = (date) => {
+  const handleDateChange = (
+    date: Date | null,
+    event: React.SyntheticEvent<any, Event> | undefined
+  ) => {
     setSelectedDate(date);
   };
-  const [selectedDate1, setSelectedDate1] = useState(null);
+  const [selectedDate1, setSelectedDate1] = useState<Date | null>(null);
 
-  const handleDateChange1 = (date) => {
-    setSelectedDate1(date);
+  const handleDateChange1 = (
+    date: Date | null,
+    event: React.SyntheticEvent<any, Event> | undefined
+  ) => {
+    setSelectedDate(date);
   };
   return (
     <section className="min-h-[100dvh] w-[80%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
@@ -49,7 +56,7 @@ const Bus = () => {
           <div className="text-center">
             <h1 className="text-3xl mt-4 mb-4 ">Bus seats</h1>
             <div>
-              <img src={imag} alt="bus img" className="rounded-lg" />
+              <Image src="services1.jpg" alt="bus img" className="rounded-lg" />
             </div>
           </div>
         </div>
@@ -165,10 +172,7 @@ const Bus = () => {
               </div>
             </form>
             <div className="flex justify-between mx-auto w-[80%]"></div>
-            <button
-              className="btn bg-blue-800 w-[80%] p-2  rounded-xl"
-              href="#"
-            >
+            <button className="btn bg-blue-800 w-[80%] p-2  rounded-xl">
               Submit
             </button>
           </div>

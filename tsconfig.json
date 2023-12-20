@@ -27,8 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/pages/Admin.js",
-    "src/app/pages/plane.js"
+    "src/app/pages/admin.tsx",
+    "src/app/pages/plane.jsx"
   ],
   "exclude": ["node_modules"]
 }
