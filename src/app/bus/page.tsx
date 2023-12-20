@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Image from "next/image";
 import NotCompleted from "../pages/notCompleted";
+import { motion, AnimatePresence } from "framer-motion";
 import Loading from "../pages/loading";
 import Completed from "../pages/completed";
 

@@ -1,6 +1,7 @@
 // @react-server-client-only
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
+import { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 // import { Reveal } from "./Reveal";
@@ -33,12 +34,13 @@ export default function Home() {
     },
   };
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hover: {
       scale: 1.1,
       transition: {
-        duration: 0.3,
-        yoyo: Infinity,
+        duration: 0.4,
+        repeat: Infinity,
+        repeatType: "reverse",
       },
     },
   };
@@ -122,9 +124,13 @@ export default function Home() {
                   rerum ab facere facilis ipsam?
                 </p>
                 <Link href="/bus">
-                  <button className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600">
+                  <motion.button
+                    whileHover={{ scale: 1.05, originX: 0 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600"
+                  >
                     Reserve a seat
-                  </button>
+                  </motion.button>
                 </Link>
               </div>
             </div>
@@ -145,9 +151,13 @@ export default function Home() {
                 </p>
               </div>
               <Link href="/plane">
-                <button className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600">
+                <motion.button
+                  whileHover={{ scale: 1.05, originX: 0 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600"
+                >
                   Reserve a seat
-                </button>
+                </motion.button>
               </Link>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 export default function Login() {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
