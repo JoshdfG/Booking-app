@@ -162,7 +162,7 @@ const Plane = () => {
               </div>
             </form>
             <div className="flex justify-between mx-auto w-[80%]"></div>
-            <button className="btn bg-blue-800 w-[80%] p-2  rounded-xl">
+            <button className="logo bg-blue-800 w-[80%] p-2  rounded-xl active:bg-blue-950">
               Submit
             </button>
           </div>

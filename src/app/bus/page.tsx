@@ -53,10 +53,16 @@ const Bus: React.FC = () => {
     <section className="min-h-[100dvh] w-[80%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
       <div>
         <div>
-          <div className="text-center">
+          <div className="text-center mx-auto">
             <h1 className="text-3xl mt-4 mb-4 ">Bus seats</h1>
-            <div>
-              <Image src="services1.jpg" alt="bus img" className="rounded-lg" />
+            <div className="">
+              <Image
+                src="/services1.jpg"
+                alt="bus img"
+                width={400}
+                height={200}
+                className="rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -146,7 +152,6 @@ const Bus: React.FC = () => {
                 </div>
                 <div className=" md:flex mx-auto align-middle justify-center">
                   <label htmlFor="">
-                    {" "}
                     <div className="mb-3">
                       <p>Pick up date</p>
                     </div>
@@ -172,7 +177,7 @@ const Bus: React.FC = () => {
               </div>
             </form>
             <div className="flex justify-between mx-auto w-[80%]"></div>
-            <button className="btn bg-blue-800 w-[80%] p-2  rounded-xl">
+            <button className="logo bg-blue-700 w-[80%] p-2 rounded-xl active:bg-blue-950">
               Submit
             </button>
           </div>
