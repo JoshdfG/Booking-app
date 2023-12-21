@@ -48,11 +48,11 @@ const Plane = () => {
     setSelectedDate(date);
   };
   return (
-    <section className="min-h-[100dvh] w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
+    <section className="min-h-[100dvh]  w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
       <div>
         <h1>Book flights</h1>
         <article>
-          <div className="card w-[90%] bg-gray-200/10 text-center p-6 m-4  mx-auto rounded-2xl text-white/80 ">
+          <div className="card w-[90%] backdrop-blur-sm bg-gray-200/10 text-center p-6 m-4  mx-auto rounded-2xl text-white/80 ">
             <div>
               <h1 className="font-semibold capitalize text-2xl mb-16 mt-8">
                 Reserve your flights & Boarding Today
