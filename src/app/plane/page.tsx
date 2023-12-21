@@ -48,7 +48,7 @@ const Plane = () => {
     setSelectedDate(date);
   };
   return (
-    <section className="min-h-[100dvh]  w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
+    <section className="min-h-[100dvh] w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
       <div>
         <h1>Book flights</h1>
         <article>
