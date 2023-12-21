@@ -54,9 +54,13 @@ const Bus: React.FC = () => {
     <section className="min-h-[100dvh] w-[80%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
       <div>
         <div>
-          <div className="text-center mx-auto">
+          <div className="text-center ">
             <h1 className="text-3xl mt-4 mb-4 ">Bus seats</h1>
-            <div className="">
+            <p className="capitalize my-4">
+              {" "}
+              book your bus seats with us today{" "}
+            </p>
+            <div className="flex justify-center align-middle">
               <Image
                 src="/services1.jpg"
                 alt="bus img"

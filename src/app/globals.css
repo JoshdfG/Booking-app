@@ -78,3 +78,7 @@ body {
   stroke-dasharray: 0 0;
   transition: all 100ms ease-in-out;
 }
+.react-datepicker__month-container {
+  font-family: poppins;
+  padding: 2px;
+}
