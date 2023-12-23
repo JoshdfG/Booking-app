@@ -54,16 +54,9 @@ export default function Login() {
                 required
                 className="w-[80%] bg-transparent border-b-2 mb-6 outline-none"
               />
-            </label>{" "}
+            </label>
           </div>
-          <div className="flex justify-between mx-auto w-[80%]">
-            {/* <div>
-              <label>
-                <input type="checkbox" className="mr-1 mb-6 capitalize" />I
-                agree to the terms & conditions
-              </label>
-            </div> */}
-          </div>
+          <div className="flex justify-between mx-auto w-[80%]"></div>
           <button
             onClick={handleButtonClick}
             className="logo bg-blue-900 w-[80%] p-2  rounded-xl active:bg-blue-950"
