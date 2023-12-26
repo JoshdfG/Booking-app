@@ -3,10 +3,10 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Image from "next/image";
-import NotCompleted from "../pages/notCompleted";
+import NotCompleted from "../pages/NotCompleted";
 import { motion, AnimatePresence } from "framer-motion";
-import Loading from "../pages/loading";
-import Completed from "../pages/completed";
+import Loading from "../pages/Loading";
+import Completed from "../pages/Completed";
 
 const Bus: React.FC = () => {
   const [isChecked1, setIsChecked1] = useState(false);
