@@ -19,7 +19,6 @@ export default function Login() {
         >
           Login
         </h1>
-        {/* <div></div> */}
         <div className="border-2 rounded-2xl border-red-300  w-[7%] md:w-[4%] mx-auto mt-2"></div>
         <div className="card backdrop-blur-sm bg-gray-200/10 text-center p-6 m-4  mx-auto rounded-2xl text-white/80 ">
           <div>

@@ -58,7 +58,6 @@ const Footer = () => {
               <div>
                 <h1 className="text-white">Help</h1>
                 <ul>
-                  {" "}
                   <li>
                     <a href="">About Us</a>
                   </li>
