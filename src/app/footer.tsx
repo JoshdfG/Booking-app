@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <section
-        className="footer bg-white/10 w-full text-gray-400 rounded-t-2xl "
+        className="footer bg-white/10 backdrop-blur-md w-full text-gray-400 rounded-t-2xl"
         id="about"
       >
         <div className=" w-[80%] md:w-[75%] mx-auto mt-12 pt-20">
