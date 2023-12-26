@@ -2,9 +2,9 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import NotCompleted from "/Users/hp/next-transport/src/app/pages/notCompleted";
-import Loading from "../pages/loading";
-import Completed from "../pages/completed";
+import NotCompleted from "../pages/NotCompleted";
+import Loading from "../pages/Loading";
+import Completed from "../pages/Completed";
 const Plane = () => {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
