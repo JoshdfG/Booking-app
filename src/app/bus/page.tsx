@@ -48,10 +48,10 @@ const Bus: React.FC = () => {
     date: Date | null,
     event: React.SyntheticEvent<any, Event> | undefined
   ) => {
-    setSelectedDate(date);
+    setSelectedDate1(date);
   };
   return (
-    <section className="min-h-[100dvh] w-[80%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
+    <section className="min-h-[100dvh] w-[80%] md:w[50%] lg:w-[40%] mx-auto text-center md:h-fit text-white">
       <div>
         <div>
           <div className="text-center ">
@@ -73,7 +73,7 @@ const Bus: React.FC = () => {
         </div>
 
         <article>
-          <div className="card backdrop-blur-sm bg-gray-200/10 text-center p-6 m-4  mx-auto rounded-2xl text-white/80 ">
+          <div className="card backdrop-blur-sm bg-gray-200/10 flex flex-col justify-center align-middle p-6 m-4  mx-auto rounded-2xl text-white/80 ">
             <div>
               <h1 className="font-semibold capitalize text-2xl mb-16 mt-8">
                 Reserve your Seats Today
@@ -182,7 +182,7 @@ const Bus: React.FC = () => {
               </div>
             </form>
             <div className="flex justify-between mx-auto w-[80%]"></div>
-            <button className="logo bg-blue-700 w-[80%] p-2 rounded-xl active:bg-blue-950">
+            <button className="logo mx-auto bg-blue-700 w-[80%] p-2 rounded-xl active:bg-blue-950">
               Submit
             </button>
           </div>
