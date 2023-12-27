@@ -45,7 +45,7 @@ const Plane = () => {
     date: Date | null,
     event: React.SyntheticEvent<any, Event> | undefined
   ) => {
-    setSelectedDate(date);
+    setSelectedDate1(date);
   };
   return (
     <section className="min-h-[100dvh]  w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
