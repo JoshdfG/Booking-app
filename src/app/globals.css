@@ -85,9 +85,6 @@ body {
 }
 
 .datepicker-container {
-  z-index: 5000; /* Ensure a higher z-index than the footer */
-  top: 50%; /* Adjust top position if needed */
-  left: 50%; /* Adjust left position if needed */
-  transform: translate(-50%, -50%); /* Center the datepicker */
+  z-index: 5000; 
   position: absolute;
 }
