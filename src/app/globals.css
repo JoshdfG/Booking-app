@@ -44,6 +44,7 @@ body {
 .footer {
   background-image: url(./assets/process-bg.png);
   background-color: rgba(6, 186, 252, 0.042);
+  z-index: -1000;
 }
 .check-box {
   margin-right: 4px;
@@ -81,4 +82,12 @@ body {
 .react-datepicker__month-container {
   font-family: poppins;
   padding: 2px;
+}
+
+.datepicker-container {
+  z-index: 5000; /* Ensure a higher z-index than the footer */
+  top: 50%; /* Adjust top position if needed */
+  left: 50%; /* Adjust left position if needed */
+  transform: translate(-50%, -50%); /* Center the datepicker */
+  position: absolute;
 }
