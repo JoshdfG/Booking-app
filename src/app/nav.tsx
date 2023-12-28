@@ -98,7 +98,7 @@ const Nav = () => {
           {/* mobile menu */}
         </nav>
         <AnimatePresence>
-          {open ? (
+          {open &&(
             <motion.div
               ref={menuRef}
               className=" 
@@ -131,7 +131,7 @@ const Nav = () => {
                   return (
                     <motion.li
                       onClick={() => setOpen(false)}
-                      className="hover:rounded-lg p-1 ease-in-out  hover:text-blue-900  "
+                      className="hover:rounded-lg p-1 ease-in-out w-full hover:text-blue-900  "
                       whileHover={{ scale: 1.03, originX: 0 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       key={id}
@@ -142,7 +142,7 @@ const Nav = () => {
                 })}
               </ul>
             </motion.div>
-          ) : null}{" "}
+          )}
         </AnimatePresence>
       </div>
     </header>
