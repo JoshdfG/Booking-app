@@ -50,10 +50,7 @@ const Bus: React.FC = () => {
     }
     setIsChecked1(false);
   };
-  // useEffect(() => {
-  //   // Set isChecked2 to true on page load
-  //   setIsChecked2(true);
-  // }, []); 
+
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const handleDateChange = (
