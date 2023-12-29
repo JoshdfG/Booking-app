@@ -19,7 +19,7 @@ const Plane = () => {
     setDestinationState1(e.target.value);
   };
   const [isChecked1, setIsChecked1] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(true);
   const [isLoading1, setIsLoading1] = useState(false);
   const [isLoading2, setIsLoading2] = useState(false);
 
@@ -121,7 +121,7 @@ const Plane = () => {
                 <StatePicker
                         onChange={handleStateChange} value={takeOff} destinationState1={false} />
                 </label>
-                
+
                 <label htmlFor="destinationState">
                   <StatePicker
                         onChange={handleStateChange1} value={destinationState1} destinationState1={true} />
