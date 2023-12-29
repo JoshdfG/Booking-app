@@ -157,11 +157,6 @@ const Bus: React.FC = () => {
                     onChange={handleStateChange} value={destinationState} />
                 </label>
                 )}
-
-                {/* {isChecked2 &&(<label htmlFor="destinationState">
-                  <StatePicker
-                    onChange={handleStateChange} value={destinationState} />
-                </label>)} */}
              
                 <div className="">
                   <label htmlFor="" className="">
