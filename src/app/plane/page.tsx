@@ -5,7 +5,19 @@ import "react-datepicker/dist/react-datepicker.css";
 import NotCompleted from "../pages/NotCompleted";
 import Loading from "../pages/Loading";
 import Completed from "../pages/Completed";
+import StatePicker from '../StatePicker';
 const Plane = () => {
+  const [takeOff, setTakeOffState] = useState<string>('');
+
+  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setTakeOffState(e.target.value);
+  };
+
+  const [destinationState1, setDestinationState1] = useState<string>('');
+
+  const handleStateChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setDestinationState1(e.target.value);
+  };
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isLoading1, setIsLoading1] = useState(false);
@@ -20,17 +32,22 @@ const Plane = () => {
         setIsLoading1(false);
       }, 200);
     }
+    
+    setIsChecked2(false)
   };
-  const handleCheckboxChange2 = () => {
-    setIsChecked2((prevChecked) => !prevChecked);
-    setIsLoading2(true);
 
+
+  const handleCheckboxChange2 = ()=> {
+   setIsChecked2((prevChecked) => !prevChecked);
+    setIsLoading2(true);
     if (!isChecked2) {
       setTimeout(() => {
         setIsLoading2(false);
       }, 200);
     }
+    setIsChecked1(false);
   };
+
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const handleDateChange = (
@@ -98,30 +115,30 @@ const Plane = () => {
                   <span className="mr-2">One Way</span>
                 </div>
               </div>
-              <label htmlFor="" className="">
-                <input
-                  type="text"
-                  required
-                  placeholder="Take off location"
-                  className="textarea w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-10 outline-none text-white"
-                />
-              </label>
-              <label htmlFor="">
-                <input
-                  type="text"
-                  placeholder="Destination"
-                  required
-                  className="textarea w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
-                />
-              </label>
+              {isChecked1 ?(  
+                <>
+                <label htmlFor="destinationState1" className=""> 
+                <StatePicker
+                        onChange={handleStateChange} value={takeOff} destinationState1={false} />
+                </label>
+                <label htmlFor="destinationState">
+                  <StatePicker
+                        onChange={handleDateChange1} value={destinationState1} destinationState1={true} />
+                </label>
+                </>):(
+                  <label htmlFor="destinationState">
+                  <StatePicker
+                        onChange={handleStateChange1} value={destinationState1} destinationState1={true} />
+                </label>
+                )}
               <div>
-                <div className="">
+              <div className="">
                   <label htmlFor="" className="">
                     <input
                       type="text"
                       required
                       placeholder="First Name"
-                      className=" w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                      className=" w-[90%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
                   </label>
 
@@ -130,13 +147,13 @@ const Plane = () => {
                       type="text"
                       placeholder="Last Name"
                       required
-                      className=" w-[80%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                      className=" w-[90%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
                   </label>
                 </div>
                 <div className=" md:flex mx-auto align-middle justify-center">
-                  <label htmlFor="">
-                    {" "}
+                {isChecked1? (     <>
+                <label htmlFor="">
                     <div className="mb-3">
                       <p>Pick up date</p>
                     </div>
@@ -157,7 +174,17 @@ const Plane = () => {
                       placeholderText="Select a date"
                       className=".react-datepicker__month-container textarea p-2 rounded-lg w-[75%] bg-slate-500 mb-8 outline-none text-white"
                     />
-                  </label>
+                  </label></>   ):(  <label htmlFor="">
+                    <div className="mb-3">
+                      <p>Pick up date</p>
+                    </div>
+                    <DatePicker
+                      selected={selectedDate}
+                      onChange={handleDateChange}
+                      placeholderText="Select a date"
+                      className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                    />
+                  </label>)}
                 </div>
               </div>
             </form>
