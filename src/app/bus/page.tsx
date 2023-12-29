@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Image from "next/image";
@@ -24,9 +24,10 @@ const Bus: React.FC = () => {
   };
    
   const [isChecked1, setIsChecked1] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(true);
   const [isLoading1, setIsLoading1] = useState(false);
   const [isLoading2, setIsLoading2] = useState(false);
+  
 
   const handleCheckboxChange1 = () => {
     setIsChecked1((prevChecked) => !prevChecked);
@@ -37,17 +38,22 @@ const Bus: React.FC = () => {
         setIsLoading1(false);
       }, 200);
     }
+    setIsChecked2(false);
   };
-  const handleCheckboxChange2 = () => {
-    setIsChecked2((prevChecked) => !prevChecked);
+  const handleCheckboxChange2 = ()=> {
+   setIsChecked2((prevChecked) => !prevChecked);
     setIsLoading2(true);
-
     if (!isChecked2) {
       setTimeout(() => {
         setIsLoading2(false);
       }, 200);
     }
+    setIsChecked1(false);
   };
+  // useEffect(() => {
+  //   // Set isChecked2 to true on page load
+  //   setIsChecked2(true);
+  // }, []); 
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const handleDateChange = (
@@ -133,15 +139,30 @@ const Bus: React.FC = () => {
                   <span className="mr-2">One Way</span>
                 </div>
               </div>
-              <div>
-                <label htmlFor="destinationState1" className="">
+             
+              <div> 
+                {isChecked1 ?(  
+                <>
+                <label htmlFor="destinationState1" className=""> 
                 <StatePicker
-                 onChange={handleStateChange1} value={destinationState1} />
+                  onChange={handleStateChange1} value={destinationState1} />
                 </label>
-                <label htmlFor="destinationState" >
-                <StatePicker
-                 onChange={handleStateChange} value={destinationState} />
+                <label htmlFor="destinationState">
+                  <StatePicker
+                    onChange={handleStateChange} value={destinationState} />
                 </label>
+                </>):(
+                  <label htmlFor="destinationState">
+                  <StatePicker
+                    onChange={handleStateChange} value={destinationState} />
+                </label>
+                )}
+
+                {/* {isChecked2 &&(<label htmlFor="destinationState">
+                  <StatePicker
+                    onChange={handleStateChange} value={destinationState} />
+                </label>)} */}
+             
                 <div className="">
                   <label htmlFor="" className="">
                     <input
@@ -161,8 +182,10 @@ const Bus: React.FC = () => {
                     />
                   </label>
                 </div>
-                <div className=" md:flex mx-auto align-middle justify-center">
-                  <label htmlFor="">
+               
+                <div className=" md:flex mx-auto align-middle justify-center"> 
+                {isChecked1? (     <>
+                <label htmlFor="">
                     <div className="mb-3">
                       <p>Pick up date</p>
                     </div>
@@ -183,7 +206,18 @@ const Bus: React.FC = () => {
                       placeholderText="Select a date"
                       className=".react-datepicker__month-container textarea p-2 rounded-lg w-[75%] bg-slate-500 mb-8 outline-none text-white"
                     />
-                  </label>
+                  </label></>   ):(  <label htmlFor="">
+                    <div className="mb-3">
+                      <p>Pick up date</p>
+                    </div>
+                    <DatePicker
+                      selected={selectedDate}
+                      onChange={handleDateChange}
+                      placeholderText="Select a date"
+                      className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                    />
+                  </label>)}
+          
                 </div>
               </div>
             </form>
