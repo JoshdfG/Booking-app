@@ -145,16 +145,16 @@ const Bus: React.FC = () => {
                 <>
                 <label htmlFor="destinationState1" className=""> 
                 <StatePicker
-                        onChange={handleStateChange1} value={takeOff} destinationState1={false} />
+                        onChange={handleStateChange} value={takeOff} destinationState1={false} />
                 </label>
                 <label htmlFor="destinationState">
                   <StatePicker
-                        onChange={handleStateChange} value={destinationState1} destinationState1={true} />
+                        onChange={handleStateChange1} value={destinationState1} destinationState1={true} />
                 </label>
                 </>):(
                   <label htmlFor="destinationState">
                   <StatePicker
-                        onChange={handleStateChange} value={destinationState1} destinationState1={true} />
+                        onChange={handleStateChange1} value={destinationState1} destinationState1={true} />
                 </label>
                 )}
              
