@@ -22,9 +22,7 @@ const Bus: React.FC = () => {
   const handleStateChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setDestinationState1(e.target.value);
   };
-
-
-
+   
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isLoading1, setIsLoading1] = useState(false);
