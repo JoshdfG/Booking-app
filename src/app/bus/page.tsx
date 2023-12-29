@@ -91,7 +91,7 @@ const Bus: React.FC = () => {
         <article>
           <div className="card backdrop-blur-sm bg-gray-200/10 flex flex-col justify-center align-middle p-6 m-4  mx-auto rounded-2xl text-white/80 ">
             <div>
-              <h1 className="font-semibold capitalize text-2xl mb-16 mt-8">
+              <h1 className="font-semibold capitalize text-2xl mb-4 mt-8">
                 Reserve your Seats Today
               </h1>
             </div>
