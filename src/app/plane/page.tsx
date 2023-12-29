@@ -67,7 +67,7 @@ const Plane = () => {
   ) => {
     setSelectedDate1(date);
   };
-  
+
   return (
     <section className="min-h-[100dvh]  w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
       <div>
@@ -157,39 +157,42 @@ const Plane = () => {
                   </label>
                 </div>
                 <div className=" md:flex mx-auto align-middle justify-center"> 
-                {isChecked1? (     <>
-                <label htmlFor="">
-                    <div className="mb-3">
-                      <p>Pick up date</p>
-                    </div>
-                    <DatePicker
-                      selected={selectedDate}
-                      onChange={handleDateChange}
-                      placeholderText="Select a date"
-                      className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
-                    />
-                  </label>
+                {isChecked1? (    
+                <>
                   <label htmlFor="">
-                    <div className="mb-3">
-                      <p>Return date</p>
-                    </div>
-                    <DatePicker
-                      selected={selectedDate1}
-                      onChange={handleDateChange1}
-                      placeholderText="Select a date"
-                      className=".react-datepicker__month-container textarea p-2 rounded-lg w-[75%] bg-slate-500 mb-8 outline-none text-white"
-                    />
-                  </label></>   ):(  <label htmlFor="">
-                    <div className="mb-3">
-                      <p>Pick up date</p>
-                    </div>
+                      <div className="mb-3">
+                        <p>Pick up date</p>
+                      </div>
+                      <DatePicker
+                        selected={selectedDate}
+                        onChange={handleDateChange}
+                        placeholderText="Select a date"
+                        className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
+                      />
+                    </label>
+                    <label htmlFor="">
+                      <div className="mb-3">
+                        <p>Return date</p>
+                      </div>
+                      <DatePicker
+                        selected={selectedDate1}
+                        onChange={handleDateChange1}
+                        placeholderText="Select a date"
+                        className=".react-datepicker__month-container textarea p-2 rounded-lg w-[75%] bg-slate-500 mb-8 outline-none text-white"
+                      />
+                    </label>
+                    </> ):(  
+                    <label htmlFor="">
+                      <div className="mb-3">
+                        <p>Pick up date</p>
+                      </div>
                     <DatePicker
                       selected={selectedDate}
                       onChange={handleDateChange}
                       placeholderText="Select a date"
                       className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
-                  </label>)}
+                    </label>)}
           
                 </div>
               </div>
