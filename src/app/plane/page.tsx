@@ -7,6 +7,7 @@ import Loading from "../pages/Loading";
 import Completed from "../pages/Completed";
 import StatePicker from '../StatePicker';
 const Plane = () => {
+
   const [takeOff, setTakeOffState] = useState<string>('');
 
   const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -18,6 +19,7 @@ const Plane = () => {
   const handleStateChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setDestinationState1(e.target.value);
   };
+  
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(true);
   const [isLoading1, setIsLoading1] = useState(false);
