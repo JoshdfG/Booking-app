@@ -19,7 +19,7 @@ const Plane = () => {
   const handleStateChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setDestinationState1(e.target.value);
   };
-  
+
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(true);
   const [isLoading1, setIsLoading1] = useState(false);
@@ -58,6 +58,7 @@ const Plane = () => {
   ) => {
     setSelectedDate(date);
   };
+
   const [selectedDate1, setSelectedDate1] = useState<Date | null>(null);
 
   const handleDateChange1 = (
@@ -66,6 +67,7 @@ const Plane = () => {
   ) => {
     setSelectedDate1(date);
   };
+  
   return (
     <section className="min-h-[100dvh]  w-[98%] md:w[50%] lg:w-[40%] mx-auto md:h-fit text-white">
       <div>
