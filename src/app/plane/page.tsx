@@ -121,9 +121,10 @@ const Plane = () => {
                 <StatePicker
                         onChange={handleStateChange} value={takeOff} destinationState1={false} />
                 </label>
+                
                 <label htmlFor="destinationState">
                   <StatePicker
-                        onChange={handleDateChange1} value={destinationState1} destinationState1={true} />
+                        onChange={handleStateChange1} value={destinationState1} destinationState1={true} />
                 </label>
                 </>):(
                   <label htmlFor="destinationState">
@@ -151,7 +152,7 @@ const Plane = () => {
                     />
                   </label>
                 </div>
-                <div className=" md:flex mx-auto align-middle justify-center">
+                <div className=" md:flex mx-auto align-middle justify-center"> 
                 {isChecked1? (     <>
                 <label htmlFor="">
                     <div className="mb-3">
@@ -185,6 +186,7 @@ const Plane = () => {
                       className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
                   </label>)}
+          
                 </div>
               </div>
             </form>

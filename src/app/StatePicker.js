@@ -1,5 +1,5 @@
 // components/StatePicker.js
-import React,{useState} from 'react';
+import React from 'react';
 
 const StatePicker = ({ onChange, value,destinationState1 }) => {
   // const [destinationState1, setDestinationState1] = useState(true);
