@@ -7,6 +7,8 @@ import NotCompleted from "../pages/NotCompleted";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "../pages/Loading";
 import Completed from "../pages/Completed";
+import StatePicker from '../StatePicker';
+
 
 const Bus: React.FC = () => {
   const [isChecked1, setIsChecked1] = useState(false);
