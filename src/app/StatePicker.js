@@ -1,7 +1,8 @@
 // components/StatePicker.js
-import React from 'react';
+import React,{useState} from 'react';
 
-const StatePicker = ({ onChange, value }) => {
+const StatePicker = ({ onChange, value,destinationState1 }) => {
+  // const [destinationState1, setDestinationState1] = useState(true);
   const nigerianStates = [
     { state: 'Abia', capital: 'Umuahia' },
     { state: 'Adamawa', capital: 'Yola' },
@@ -45,7 +46,7 @@ const StatePicker = ({ onChange, value }) => {
   return (
     <select 
     className='textarea w-[90%] p-2 rounded-lg bg-slate-500 mb-10 outline-none text-white' onChange={onChange} value={value}>
-      <option value="">Select State</option>
+    <option value="">{destinationState1 ? 'Select Destination' : 'Select Takeoff'}</option>
       {nigerianStates.map((item, index) => (
         <option className='textarea w-[90%] p-2 rounded-lg bg-cyan-900 text-white mb-10 outline-none' key={index} value={item.state}>
           {item.state} - {item.capital}

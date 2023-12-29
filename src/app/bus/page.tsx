@@ -11,10 +11,10 @@ import StatePicker from '../StatePicker';
 
 
 const Bus: React.FC = () => {
-  const [destinationState, setDestinationState] = useState<string>('');
+  const [takeOff, setTakeOffState] = useState<string>('');
 
   const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setDestinationState(e.target.value);
+    setTakeOffState(e.target.value);
   };
 
   const [destinationState1, setDestinationState1] = useState<string>('');
@@ -38,8 +38,11 @@ const Bus: React.FC = () => {
         setIsLoading1(false);
       }, 200);
     }
-    setIsChecked2(false);
+    
+    setIsChecked2(false)
   };
+
+
   const handleCheckboxChange2 = ()=> {
    setIsChecked2((prevChecked) => !prevChecked);
     setIsLoading2(true);
@@ -142,16 +145,16 @@ const Bus: React.FC = () => {
                 <>
                 <label htmlFor="destinationState1" className=""> 
                 <StatePicker
-                  onChange={handleStateChange1} value={destinationState1} />
+                        onChange={handleStateChange1} value={takeOff} destinationState1={false} />
                 </label>
                 <label htmlFor="destinationState">
                   <StatePicker
-                    onChange={handleStateChange} value={destinationState} />
+                        onChange={handleStateChange} value={destinationState1} destinationState1={true} />
                 </label>
                 </>):(
                   <label htmlFor="destinationState">
                   <StatePicker
-                    onChange={handleStateChange} value={destinationState} />
+                        onChange={handleStateChange} value={destinationState1} destinationState1={true} />
                 </label>
                 )}
              
