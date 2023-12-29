@@ -43,10 +43,11 @@ const StatePicker = ({ onChange, value }) => {
   ];
 
   return (
-    <select onChange={onChange} value={value}>
+    <select 
+    className='textarea w-[90%] p-2 rounded-lg bg-slate-500 mb-10 outline-none text-white' onChange={onChange} value={value}>
       <option value="">Select State</option>
       {nigerianStates.map((item, index) => (
-        <option key={index} value={item.state}>
+        <option className='textarea w-[90%] p-2 rounded-lg bg-cyan-900 text-white mb-10 outline-none' key={index} value={item.state}>
           {item.state} - {item.capital}
         </option>
       ))}

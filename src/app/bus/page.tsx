@@ -11,6 +11,20 @@ import StatePicker from '../StatePicker';
 
 
 const Bus: React.FC = () => {
+  const [destinationState, setDestinationState] = useState<string>('');
+
+  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setDestinationState(e.target.value);
+  };
+
+  const [destinationState1, setDestinationState1] = useState<string>('');
+
+  const handleStateChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setDestinationState1(e.target.value);
+  };
+
+
+
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isLoading1, setIsLoading1] = useState(false);
@@ -122,21 +136,13 @@ const Bus: React.FC = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="" className="">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Take off location"
-                    className="textarea w-[90%] p-2 rounded-lg bg-slate-500 mb-10 outline-none text-white"
-                  />
+                <label htmlFor="destinationState1" className="">
+                <StatePicker
+                 onChange={handleStateChange1} value={destinationState1} />
                 </label>
-                <label htmlFor="">
-                  <input
-                    type="text"
-                    placeholder="Destination"
-                    required
-                    className="textarea w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
-                  />
+                <label htmlFor="destinationState" >
+                <StatePicker
+                 onChange={handleStateChange} value={destinationState} />
                 </label>
                 <div className="">
                   <label htmlFor="" className="">
