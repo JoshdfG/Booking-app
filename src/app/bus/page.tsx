@@ -115,6 +115,7 @@ const Bus: React.FC = () => {
                       checked={roundTrip}
                       onChange={handleCheckboxChange1}
                     />
+                    {/* rendering the svg cinditionally */}
                     {!roundTrip ? (
                       <NotCompleted />
                     ) : isLoading1 ? (
@@ -133,6 +134,7 @@ const Bus: React.FC = () => {
                       onChange={handleCheckboxChange2}
                       type="checkbox"
                     />
+                    {/* rendering the svg cinditionally */}
                     {!oneWay ? (
                       <NotCompleted />
                     ) : isLoading2 ? (
@@ -146,6 +148,7 @@ const Bus: React.FC = () => {
               </div>
              
               <div> 
+                {/* rendering the trip options contitionally */}
                 {roundTrip ?(  
                 <>
                 <label htmlFor="destinationState1" className=""> 
@@ -184,6 +187,7 @@ const Bus: React.FC = () => {
                 </div>
                
                 <div className=" md:flex mx-auto align-middle justify-center"> 
+                {/* dislaying pick up date conditionally */}
                 {roundTrip? (     <>
                 <label htmlFor="">
                     <div className="mb-3">
