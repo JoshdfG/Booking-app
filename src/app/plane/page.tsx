@@ -95,6 +95,7 @@ const Plane = () => {
                       checked={roundTrip}
                       onChange={handleCheckboxChange1}
                     />
+                     {/* rendering the svg cinditionally */}
                     {!roundTrip ? (
                       <NotCompleted />
                     ) : isLoading1 ? (
@@ -113,6 +114,7 @@ const Plane = () => {
                       onChange={handleCheckboxChange2}
                       type="checkbox"
                     />
+                     {/* rendering the svg cinditionally */}
                     {!oneWay ? (
                       <NotCompleted />
                     ) : isLoading2 ? (
