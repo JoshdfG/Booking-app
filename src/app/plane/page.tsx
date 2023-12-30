@@ -8,57 +8,62 @@ import Completed from "../pages/Completed";
 import StatePicker from '../StatePicker';
 const Plane = () => {
 
+  //take off state to control the selected state
   const [takeOff, setTakeOffState] = useState<string>('');
-
-  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //take off function to control the selected value
+  const takeOffStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTakeOffState(e.target.value);
   };
 
   const [destinationState1, setDestinationState1] = useState<string>('');
-
+//destination function to control the selected value
   const handleStateChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setDestinationState1(e.target.value);
   };
 
-  const [isChecked1, setIsChecked1] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(true);
+  const [roundTrip, setroundTrip] = useState(false);
+  const [oneWay, setOneWay] = useState(true);
+  
+  //loading animation for the checkboxes
   const [isLoading1, setIsLoading1] = useState(false);
   const [isLoading2, setIsLoading2] = useState(false);
 
   const handleCheckboxChange1 = () => {
-    setIsChecked1((prevChecked) => !prevChecked);
+    setroundTrip((prevChecked) => !prevChecked);
     setIsLoading1(true);
 
-    if (!isChecked1) {
+    if (!roundTrip) {
       setTimeout(() => {
         setIsLoading1(false);
       }, 200);
     }
     
-    setIsChecked2(false)
+    setOneWay(false)
   };
 
 
   const handleCheckboxChange2 = ()=> {
-   setIsChecked2((prevChecked) => !prevChecked);
+    setOneWay((prevChecked) => !prevChecked);
     setIsLoading2(true);
-    if (!isChecked2) {
+    if (!oneWay) {
       setTimeout(() => {
         setIsLoading2(false);
       }, 200);
     }
-    setIsChecked1(false);
+    setroundTrip(false);
   };
 
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  //pickup date state
+  const [pickUpDate, setpickUpDate] = useState<Date | null>(null);
 
-  const handleDateChange = (
+  const handlePickUpDate = (
     date: Date | null,
     event: React.SyntheticEvent<any, Event> | undefined
   ) => {
-    setSelectedDate(date);
+    setpickUpDate(date);
   };
 
+  //return date state
   const [selectedDate1, setSelectedDate1] = useState<Date | null>(null);
 
   const handleDateChange1 = (
@@ -87,10 +92,10 @@ const Plane = () => {
                       id="check1"
                       type="checkbox"
                       className="checkbox hidden"
-                      checked={isChecked1}
+                      checked={roundTrip}
                       onChange={handleCheckboxChange1}
                     />
-                    {!isChecked1 ? (
+                    {!roundTrip ? (
                       <NotCompleted />
                     ) : isLoading1 ? (
                       <Loading />
@@ -104,11 +109,11 @@ const Plane = () => {
                     <input
                       id="check2"
                       className="checkbox hidden"
-                      checked={isChecked2}
+                      checked={oneWay}
                       onChange={handleCheckboxChange2}
                       type="checkbox"
                     />
-                    {!isChecked2 ? (
+                    {!oneWay ? (
                       <NotCompleted />
                     ) : isLoading2 ? (
                       <Loading />
@@ -119,11 +124,11 @@ const Plane = () => {
                   <span className="mr-2">One Way</span>
                 </div>
               </div>
-              {isChecked1 ?(  
+              {roundTrip ?(  
                 <>
                 <label htmlFor="destinationState1" className=""> 
                 <StatePicker
-                        onChange={handleStateChange} value={takeOff} destinationState1={false} />
+                        onChange={takeOffStateChange} value={takeOff} destinationState1={false} />
                 </label>
 
                 <label htmlFor="destinationState">
@@ -157,15 +162,15 @@ const Plane = () => {
                   </label>
                 </div>
                 <div className=" md:flex mx-auto align-middle justify-center"> 
-                {isChecked1? (    
+                {roundTrip? (    
                 <>
                   <label htmlFor="">
                       <div className="mb-3">
                         <p>Pick up date</p>
                       </div>
                       <DatePicker
-                        selected={selectedDate}
-                        onChange={handleDateChange}
+                        selected={pickUpDate}
+                        onChange={handlePickUpDate}
                         placeholderText="Select a date"
                         className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
                       />
@@ -187,8 +192,8 @@ const Plane = () => {
                         <p>Pick up date</p>
                       </div>
                     <DatePicker
-                      selected={selectedDate}
-                      onChange={handleDateChange}
+                       selected={pickUpDate}
+                       onChange={handlePickUpDate}
                       placeholderText="Select a date"
                       className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
