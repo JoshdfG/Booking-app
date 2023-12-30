@@ -95,7 +95,7 @@ const Plane = () => {
                       checked={roundTrip}
                       onChange={handleCheckboxChange1}
                     />
-                     {/* rendering the svg cinditionally */}
+                     {/* rendering the svg conditionally */}
                     {!roundTrip ? (
                       <NotCompleted />
                     ) : isLoading1 ? (
@@ -114,7 +114,7 @@ const Plane = () => {
                       onChange={handleCheckboxChange2}
                       type="checkbox"
                     />
-                     {/* rendering the svg cinditionally */}
+                     {/* rendering the svg conditionally */}
                     {!oneWay ? (
                       <NotCompleted />
                     ) : isLoading2 ? (
@@ -126,6 +126,7 @@ const Plane = () => {
                   <span className="mr-2">One Way</span>
                 </div>
               </div>
+              {/* rendering the take options conditionally */}
               {roundTrip ?(  
                 <>
                 <label htmlFor="destinationState1" className=""> 
@@ -164,6 +165,7 @@ const Plane = () => {
                   </label>
                 </div>
                 <div className=" md:flex mx-auto align-middle justify-center"> 
+                {/* rendering the pickup date conditionally i.e if it's a return trip it displays the return date */}
                 {roundTrip? (    
                 <>
                   <label htmlFor="">
