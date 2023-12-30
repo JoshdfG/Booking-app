@@ -6,6 +6,7 @@ import NotCompleted from "../pages/NotCompleted";
 import Loading from "../pages/Loading";
 import Completed from "../pages/Completed";
 import StatePicker from '../StatePicker';
+
 const Plane = () => {
 
   //take off state to control the selected state
