@@ -54,21 +54,24 @@ const Bus: React.FC = () => {
     setIsChecked1(false);
   };
 
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  //pickup date state
+  const [pickUpDate, setpickUpDate] = useState<Date | null>(null);
 
-  const handleDateChange = (
+  const handlePickUpDate = (
     date: Date | null,
     event: React.SyntheticEvent<any, Event> | undefined
   ) => {
-    setSelectedDate(date);
+    setpickUpDate(date);
   };
-  const [selectedDate1, setSelectedDate1] = useState<Date | null>(null);
 
-  const handleDateChange1 = (
+  //return date state
+  const [returnDate, setreturnDate] = useState<Date | null>(null);
+
+  const handleReturnDate = (
     date: Date | null,
     event: React.SyntheticEvent<any, Event> | undefined
   ) => {
-    setSelectedDate1(date);
+    setreturnDate(date);
   };
   return (
     <section className="min-h-[100dvh] w-[80%] md:w[50%] lg:w-[40%] mx-auto text-center md:h-fit text-white">
@@ -185,8 +188,8 @@ const Bus: React.FC = () => {
                       <p>Pick up date</p>
                     </div>
                     <DatePicker
-                      selected={selectedDate}
-                      onChange={handleDateChange}
+                      selected={pickUpDate}
+                      onChange={handlePickUpDate}
                       placeholderText="Select a date"
                       className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
@@ -196,8 +199,8 @@ const Bus: React.FC = () => {
                       <p>Return date</p>
                     </div>
                     <DatePicker
-                      selected={selectedDate1}
-                      onChange={handleDateChange1}
+                      selected={returnDate}
+                      onChange={handleReturnDate}
                       placeholderText="Select a date"
                       className=".react-datepicker__month-container textarea p-2 rounded-lg w-[75%] bg-slate-500 mb-8 outline-none text-white"
                     />
@@ -206,8 +209,8 @@ const Bus: React.FC = () => {
                       <p>Pick up date</p>
                     </div>
                     <DatePicker
-                      selected={selectedDate}
-                      onChange={handleDateChange}
+                      selected={pickUpDate}
+                      onChange={handlePickUpDate}
                       placeholderText="Select a date"
                       className=".react-datepicker__month-container textarea  p-2 mr-2 w-[75%] rounded-lg bg-slate-500 mb-8 outline-none text-white"
                     />
