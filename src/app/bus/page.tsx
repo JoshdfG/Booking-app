@@ -11,47 +11,49 @@ import StatePicker from '../StatePicker';
 
 
 const Bus: React.FC = () => {
-  const [takeOff, setTakeOffState] = useState<string>('');
 
-  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //take off state to control the selected state
+  const [takeOff, setTakeOffState] = useState<string>('');
+  //take off function to control the selected value
+  const takeOffStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTakeOffState(e.target.value);
   };
 
   const [destinationState1, setDestinationState1] = useState<string>('');
-
+//destination function to control the selected value
   const handleStateChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setDestinationState1(e.target.value);
   };
-   
-  const [isChecked1, setIsChecked1] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(true);
+
+  const [roundTrip, setRoundTrip] = useState(false);
+  const [oneWay, setOneWay] = useState(true);
+
+  //loading animation for the checkboxes
   const [isLoading1, setIsLoading1] = useState(false);
   const [isLoading2, setIsLoading2] = useState(false);
-  
 
   const handleCheckboxChange1 = () => {
-    setIsChecked1((prevChecked) => !prevChecked);
+    setRoundTrip((prevChecked) => !prevChecked);
     setIsLoading1(true);
 
-    if (!isChecked1) {
+    if (!roundTrip) {
       setTimeout(() => {
         setIsLoading1(false);
       }, 200);
     }
     
-    setIsChecked2(false)
+    setOneWay(false)
   };
 
-
   const handleCheckboxChange2 = ()=> {
-   setIsChecked2((prevChecked) => !prevChecked);
+   setOneWay((prevChecked) => !prevChecked);
     setIsLoading2(true);
-    if (!isChecked2) {
+    if (!oneWay) {
       setTimeout(() => {
         setIsLoading2(false);
       }, 200);
     }
-    setIsChecked1(false);
+    setRoundTrip(false);
   };
 
   //pickup date state
@@ -110,10 +112,10 @@ const Bus: React.FC = () => {
                       id="check1"
                       type="checkbox"
                       className="checkbox hidden"
-                      checked={isChecked1}
+                      checked={roundTrip}
                       onChange={handleCheckboxChange1}
                     />
-                    {!isChecked1 ? (
+                    {!roundTrip ? (
                       <NotCompleted />
                     ) : isLoading1 ? (
                       <Loading />
@@ -127,11 +129,11 @@ const Bus: React.FC = () => {
                     <input
                       id="check2"
                       className="checkbox hidden"
-                      checked={isChecked2}
+                      checked={oneWay}
                       onChange={handleCheckboxChange2}
                       type="checkbox"
                     />
-                    {!isChecked2 ? (
+                    {!oneWay ? (
                       <NotCompleted />
                     ) : isLoading2 ? (
                       <Loading />
@@ -144,11 +146,11 @@ const Bus: React.FC = () => {
               </div>
              
               <div> 
-                {isChecked1 ?(  
+                {roundTrip ?(  
                 <>
                 <label htmlFor="destinationState1" className=""> 
                 <StatePicker
-                        onChange={handleStateChange} value={takeOff} destinationState1={false} />
+                        onChange={takeOffStateChange} value={takeOff} destinationState1={false} />
                 </label>
                 <label htmlFor="destinationState">
                   <StatePicker
@@ -182,7 +184,7 @@ const Bus: React.FC = () => {
                 </div>
                
                 <div className=" md:flex mx-auto align-middle justify-center"> 
-                {isChecked1? (     <>
+                {roundTrip? (     <>
                 <label htmlFor="">
                     <div className="mb-3">
                       <p>Pick up date</p>
