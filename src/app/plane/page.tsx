@@ -23,7 +23,7 @@ const Plane = () => {
 
   const [roundTrip, setroundTrip] = useState(false);
   const [oneWay, setOneWay] = useState(true);
-  
+
   //loading animation for the checkboxes
   const [isLoading1, setIsLoading1] = useState(false);
   const [isLoading2, setIsLoading2] = useState(false);
@@ -64,13 +64,13 @@ const Plane = () => {
   };
 
   //return date state
-  const [selectedDate1, setSelectedDate1] = useState<Date | null>(null);
+  const [returnDate, setreturnDate] = useState<Date | null>(null);
 
-  const handleDateChange1 = (
+  const handleReturnDate = (
     date: Date | null,
     event: React.SyntheticEvent<any, Event> | undefined
   ) => {
-    setSelectedDate1(date);
+    setreturnDate(date);
   };
 
   return (
@@ -180,8 +180,8 @@ const Plane = () => {
                         <p>Return date</p>
                       </div>
                       <DatePicker
-                        selected={selectedDate1}
-                        onChange={handleDateChange1}
+                        selected={returnDate}
+                        onChange={handleReturnDate}
                         placeholderText="Select a date"
                         className=".react-datepicker__month-container textarea p-2 rounded-lg w-[75%] bg-slate-500 mb-8 outline-none text-white"
                       />
