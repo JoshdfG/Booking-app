@@ -58,10 +58,7 @@ const Bus: React.FC = () => {
   //pickup date state
   const [pickUpDate, setpickUpDate] = useState<Date | null>(null);
 
-  const handlePickUpDate = (
-    date: Date | null,
-    event: React.SyntheticEvent<any, Event> | undefined
-  ) => {
+  const handlePickUpDate = (date: Date | null) => {
     setpickUpDate(date);
   };
 
