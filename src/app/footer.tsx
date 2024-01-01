@@ -24,7 +24,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out cursor-pointer"
+                      className="hover:border-b-2 hover:text-blue-300 hover:transition-all hover:ease-in-out cursor-pointer"
                     >
                       Info
                     </a>
@@ -32,7 +32,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out  cursor-pointer"
+                      className="hover:border-b-2 hover:text-blue-300 hover:transition-all hover:ease-in-out  cursor-pointer"
                     >
                       Reviews
                     </a>
@@ -40,7 +40,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out  cursor-pointer"
+                      className="hover:border-b-2 hover:text-blue-300 hover:transition-all hover:ease-in-out  cursor-pointer"
                     >
                       Contact Us
                     </a>
@@ -48,7 +48,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out  cursor-pointer"
+                      className="hover:border-b-2 hover:text-blue-300 hover:transition-all hover:ease-in-out  cursor-pointer"
                     >
                       Careers
                     </a>
