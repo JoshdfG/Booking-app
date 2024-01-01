@@ -2,7 +2,6 @@
 import React from 'react';
 
 const StatePicker = ({ onChange, value,destinationState1 }) => {
-  // const [destinationState1, setDestinationState1] = useState(true);
   const nigerianStates = [
     { state: 'Abia', capital: 'Umuahia' },
     { state: 'Adamawa', capital: 'Yola' },

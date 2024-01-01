@@ -25,7 +25,6 @@ body {
     )
     rgb(var(--background-start-rgb));
   background-image: url(./assets/Hero-bg.png);
-  /* background-color: #08232a; */
 }
 
 .nav {

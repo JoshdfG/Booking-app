@@ -57,20 +57,14 @@ const Plane = () => {
   //pickup date state
   const [pickUpDate, setpickUpDate] = useState<Date | null>(null);
 
-  const handlePickUpDate = (
-    date: Date | null,
-    event: React.SyntheticEvent<any, Event> | undefined
-  ) => {
+  const handlePickUpDate = (date: Date | null) => {
     setpickUpDate(date);
   };
 
   //return date state
   const [returnDate, setreturnDate] = useState<Date | null>(null);
 
-  const handleReturnDate = (
-    date: Date | null,
-    event: React.SyntheticEvent<any, Event> | undefined
-  ) => {
+  const handleReturnDate = (date: Date | null) => {
     setreturnDate(date);
   };
 

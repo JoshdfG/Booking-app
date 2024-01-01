@@ -85,7 +85,7 @@ export default function Home() {
                   <motion.button
                     variants={buttonVariants}
                     whileHover="hover"
-                    className="logo border-2 border-white/50 px-4 py-2 rounded-full hover:bg-blue-950"
+                    className="logo border-2 border-white/50 px-4 py-2 rounded-full hover:bg-blue-950 my-8"
                   >
                     Become an Admin
                   </motion.button>

@@ -24,7 +24,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 "
+                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 cursor-pointer"
                     >
                       Info
                     </a>
@@ -32,7 +32,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 "
+                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 cursor-pointer"
                     >
                       Reviews
                     </a>
@@ -40,7 +40,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 "
+                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 cursor-pointer"
                     >
                       Contact Us
                     </a>
@@ -48,9 +48,9 @@ const Footer = () => {
                   <li>
                     <a
                       href="#pricing"
-                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 "
+                      className="hover:border-b-2 hover:text-teal-400 hover:transition-all hover:ease-in-out hover:border-teal-400 cursor-pointer"
                     >
-                      Caareers
+                      Careers
                     </a>
                   </li>
                 </ul>
@@ -59,16 +59,16 @@ const Footer = () => {
                 <h1 className="text-white">Help</h1>
                 <ul>
                   <li>
-                    <a href="">About Us</a>
+                    <a href="" className="hover:text-white cursor-pointer">About Us</a>
                   </li>
                   <li>
-                    <a href="">Partners</a>
+                    <a href="" className="hover:text-white cursor-pointer">Partners</a>
                   </li>
                   <li>
-                    <a href="">Subscribe</a>
+                    <a href="" className="hover:text-white cursor-pointer">Subscribe</a>
                   </li>
                   <li>
-                    <a href="">Terms & Conditions</a>
+                    <a href="" className="hover:text-white cursor-pointer">Terms & Conditions</a>
                   </li>
                 </ul>
               </div>
