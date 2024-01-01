@@ -68,10 +68,7 @@ const Bus: React.FC = () => {
   //return date state
   const [returnDate, setreturnDate] = useState<Date | null>(null);
 
-  const handleReturnDate = (
-    date: Date | null,
-    event: React.SyntheticEvent<any, Event> | undefined
-  ) => {
+  const handleReturnDate = (date: Date | null) => {
     setreturnDate(date);
   };
   return (
