@@ -96,7 +96,7 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-        {/* pricing */}
+        {/* Our services section */}
         <section className="">
           <h1 className="text-center uppercase text-red-300 mt-12 text-sm font-bold scroll-smooth tracking-wider">
             Our Services
