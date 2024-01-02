@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  // animation for the image on the home screen
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -19,6 +20,7 @@ export default function Home() {
       },
     },
   };
+  // animation for the text and button to slide in
   const containerVaris = {
     hidden: {
       opacity: 0,
