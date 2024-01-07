@@ -121,6 +121,7 @@ const Nav = () => {
               }}
             >
               <ul className="text-center md:hidden space-y-6  font-semibold ">
+                {/* stating the types of link */}
                 {links.map((link) => {
                   type link = {
                     id: number;
