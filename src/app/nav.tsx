@@ -31,7 +31,7 @@ const Nav = () => {
   }, [menuRef, setOpen]);
 
   return (
-    <header className="relative w-full z-[1000] hover:shadow-xl">
+    <header className="relative  w-full z-[1000] hover:shadow-xl">
       <div className="footer bg-black shadow-xl p-4 z-[1000]">
         <nav className="flex justify-between items-center w-[95%] md:w-[90%]  mx-auto p-1 my-auto  ">
           <div className=" font-bold text-2xl text-blue-900 ">
