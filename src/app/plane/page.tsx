@@ -43,6 +43,7 @@ const Plane = () => {
   };
 
 
+
   const handleCheckboxChange2 = ()=> {
     setOneWay((prevChecked) => !prevChecked);
     setIsLoading2(true);
@@ -155,8 +156,7 @@ const Plane = () => {
                       type="text"
                       placeholder="Last Name"
                       required
-                      className=" w-[90%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"
-                    />
+                      className=" w-[90%] md:w-[90%] p-2 rounded-lg bg-slate-500 mb-8 outline-none text-white"/>
                   </label>
                 </div>
                 <div className=" md:flex mx-auto align-middle justify-center"> 

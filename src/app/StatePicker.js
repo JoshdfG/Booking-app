@@ -2,6 +2,8 @@
 import React from 'react';
 
 const StatePicker = ({ onChange, value,destinationState1 }) => {
+  // list of states in nigeria
+  
   const nigerianStates = [
     { state: 'Abia', capital: 'Umuahia' },
     { state: 'Adamawa', capital: 'Yola' },
@@ -41,6 +43,7 @@ const StatePicker = ({ onChange, value,destinationState1 }) => {
     { state: 'Yobe', capital: 'Damaturu' },
     { state: 'Zamfara', capital: 'Gusau' },
   ];
+
 
   return (
     <select 
