@@ -128,7 +128,7 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05, originX: 0 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600"
+                    className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600 active:bg-blue-900"
                   >
                     Reserve a seat
                   </motion.button>
@@ -155,7 +155,7 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05, originX: 0 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="logo bg-blue-950 p-2 rounded-md mt-4 hover:bg-blue-600"
+                  className="logo bg-blue-950  p-2 rounded-md mt-4 hover:bg-blue-600 active:bg-blue-900"
                 >
                   Reserve a seat
                 </motion.button>
