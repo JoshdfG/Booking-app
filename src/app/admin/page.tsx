@@ -89,7 +89,7 @@ export default function Admin() {
               Register
             </h1>
           </div>
-          <div>
+          <div className="relative">
             <label htmlFor="">
               <input
                 ref={inputRef}
@@ -100,7 +100,7 @@ export default function Admin() {
                 onChange={(e)=>setName(e.target.value)}
                 className="input-box w-[80%] bg-transparent border-b-2  mb-16 outline-none"
               />
-               {errors.name && <p className="text-red-500">{errors.name}</p>}
+                 {/* {errors.name && <p className="text-red-500 absolute top-0 right-0 mt-[24px] mr-12">{errors.name}</p>} */}
             </label>
             <label htmlFor="">
               <input
@@ -112,7 +112,7 @@ export default function Admin() {
                 onChange={(e)=>setEmail(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
-              {errors.email && <p className="text-red-500">{errors.email}</p>}
+              {/* {errors.email && <p className="text-red-500 absolute top-0 right-0 mt-[120px] mr-12">{errors.email}</p>} */}
             </label>
             <label htmlFor="">
               <input
@@ -122,6 +122,7 @@ export default function Admin() {
                 required
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
+                  {/* {errors.password && <p className="text-red-500 absolute top-0 right-0 mt-[207px] mr-12">{errors.password}</p>} */}
             </label>
             <label htmlFor="">
               <input
@@ -133,6 +134,7 @@ export default function Admin() {
                 onChange={(e)=>setPassword(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-6 outline-none"
               />
+               {/* {errors.password && <p className="text-red-500 absolute top-0 right-0 mt-[294px] mr-12">{errors.password}</p>} */}
             </label>
           </div>
           <div className="flex justify-between mx-auto w-[80%]">
