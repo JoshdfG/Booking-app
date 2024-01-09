@@ -24,6 +24,7 @@ export default function Admin() {
     }
   };
   type Errors = {
+    wallet: React.JSX.Element;
     name?: string;
     email?: string;
     password?: string;
@@ -35,6 +36,7 @@ export default function Admin() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [wallet, setWallet] = useState<string>('');
   const [errors, setErrors] = useState<Errors>({});
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
@@ -46,19 +48,24 @@ export default function Admin() {
     let errors: Errors = {};
 
     if (!name) {
-      errors.name = 'Name is required.';
+      errors.name = 'Required!';
     }
 
     if (!email) {
-      errors.email = 'Email is required.';
+      errors.email = 'Required!';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       errors.email = 'Email is invalid.';
     }
 
     if (!password) {
-      errors.password = 'Password is required.';
+      errors.password = 'Required!';
     } else if (password.length < 6) {
       errors.password = 'Password must be at least 6 characters.';
+    }
+    if (!wallet) {
+      errors.password = 'Required!';
+    } else if (password.length < 16) {
+      errors.password = 'Enter a valid wallet address.';
     }
 
     setErrors(errors);
@@ -100,7 +107,10 @@ export default function Admin() {
                 onChange={(e)=>setName(e.target.value)}
                 className="input-box w-[80%] bg-transparent border-b-2  mb-16 outline-none"
               />
-                 {/* {errors.name && <p className="text-red-500 absolute top-0 right-0 mt-[24px] mr-12">{errors.name}</p>} */}
+              
+               {errors.name && name && 
+                (<p className="text-red-500 text-sm absolute top-0 right-0 mt-[24px] mr-12">{errors.name}</p>)
+                }
             </label>
             <label htmlFor="">
               <input
@@ -112,7 +122,9 @@ export default function Admin() {
                 onChange={(e)=>setEmail(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
-              {/* {errors.email && <p className="text-red-500 absolute top-0 right-0 mt-[120px] mr-12">{errors.email}</p>} */}
+                 {errors.email && email && 
+                (<p className="text-red-500 text-sm absolute top-0 right-0 mt-[24px] mr-12">{errors.email}</p>)
+                }
             </label>
             <label htmlFor="">
               <input
@@ -120,9 +132,11 @@ export default function Admin() {
                 type="Password"
                 placeholder="Blockchain Wallet"
                 required
+                value={wallet}
+                onChange={(e)=>setWallet(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
-                  {/* {errors.password && <p className="text-red-500 absolute top-0 right-0 mt-[207px] mr-12">{errors.password}</p>} */}
+                  {errors.wallet && wallet && <p className="text-red-500 text-sm  absolute top-0 right-0 mt-[205px] mr-12">{errors.wallet}</p>}
             </label>
             <label htmlFor="">
               <input
@@ -134,7 +148,7 @@ export default function Admin() {
                 onChange={(e)=>setPassword(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-6 outline-none"
               />
-               {/* {errors.password && <p className="text-red-500 absolute top-0 right-0 mt-[294px] mr-12">{errors.password}</p>} */}
+               {errors.password && password && <p className="text-red-500 text-sm absolute top-0 right-0 mt-[294px] mr-12">{errors.password}</p>}
             </label>
           </div>
           <div className="flex justify-between mx-auto w-[80%]">
