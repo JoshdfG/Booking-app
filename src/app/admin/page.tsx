@@ -24,10 +24,10 @@ export default function Admin() {
     }
   };
   type Errors = {
-    wallet: React.JSX.Element;
     name?: string;
     email?: string;
     password?: string;
+    wallet?:string;
   };
   
   type SetErrors = (errors: Errors) => void;
@@ -42,7 +42,7 @@ export default function Admin() {
 
   useEffect(() => {
     validateForm();
-  }, [name, email, password]);
+  }, [name, email, password,wallet]);
 
   const validateForm = () => {
     let errors: Errors = {};
@@ -62,10 +62,11 @@ export default function Admin() {
     } else if (password.length < 6) {
       errors.password = 'Password must be at least 6 characters.';
     }
+    
     if (!wallet) {
-      errors.password = 'Required!';
+      errors.wallet = 'Required!';
     } else if (password.length < 16) {
-      errors.password = 'Enter a valid wallet address.';
+      errors.wallet = 'Enter a valid wallet address.';
     }
 
     setErrors(errors);
