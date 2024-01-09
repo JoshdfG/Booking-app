@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 
 export default function Admin() {
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -21,6 +21,55 @@ export default function Admin() {
       setTimeout(() => {
         setIsLoading1(false);
       }, 200);
+    }
+  };
+  type Errors = {
+    name?: string;
+    email?: string;
+    password?: string;
+  };
+  
+  type SetErrors = (errors: Errors) => void;
+  type SetIsFormValid = (isValid: boolean) => void;
+
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errors, setErrors] = useState<Errors>({});
+  const [isFormValid, setIsFormValid] = useState<boolean>(false);
+
+  useEffect(() => {
+    validateForm();
+  }, [name, email, password]);
+
+  const validateForm = () => {
+    let errors: Errors = {};
+
+    if (!name) {
+      errors.name = 'Name is required.';
+    }
+
+    if (!email) {
+      errors.email = 'Email is required.';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = 'Email is invalid.';
+    }
+
+    if (!password) {
+      errors.password = 'Password is required.';
+    } else if (password.length < 6) {
+      errors.password = 'Password must be at least 6 characters.';
+    }
+
+    setErrors(errors);
+    setIsFormValid(Object.keys(errors).length === 0);
+  };
+
+  const handleSubmit = () => {
+    if (isFormValid) {
+      console.log('Form submitted successfully!');
+    } else {
+      console.log('Form has errors. Please correct them.');
     }
   };
   return (
@@ -47,8 +96,11 @@ export default function Admin() {
                 type="text"
                 placeholder="Company Name"
                 required
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
                 className="input-box w-[80%] bg-transparent border-b-2  mb-16 outline-none"
               />
+               {errors.name && <p className="text-red-500">{errors.name}</p>}
             </label>
             <label htmlFor="">
               <input
@@ -56,8 +108,11 @@ export default function Admin() {
                 type="text"
                 required
                 placeholder="E-mail"
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
+              {errors.email && <p className="text-red-500">{errors.email}</p>}
             </label>
             <label htmlFor="">
               <input
@@ -74,6 +129,8 @@ export default function Admin() {
                 type="Password"
                 placeholder="Password"
                 required
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-6 outline-none"
               />
             </label>

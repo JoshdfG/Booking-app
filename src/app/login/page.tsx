@@ -5,9 +5,58 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Login() {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleButtonClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
+  // const handleButtonClick = () => {
+  //   if (inputRef.current) {
+  //     inputRef.current.focus();
+  //   }
+  // };
+  type Errors = {
+    name?: string;
+    email?: string;
+    password?: string;
+  };
+  
+  type SetErrors = (errors: Errors) => void;
+  type SetIsFormValid = (isValid: boolean) => void;
+
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errors, setErrors] = useState<Errors>({});
+  const [isFormValid, setIsFormValid] = useState<boolean>(false);
+
+  useEffect(() => {
+    validateForm();
+  }, [name, email, password]);
+
+  const validateForm = () => {
+    let errors: Errors = {};
+
+    if (!name) {
+      errors.name = 'Name is required.';
+    }
+
+    if (!email) {
+      errors.email = 'Email is required.';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = 'Email is invalid.';
+    }
+
+    if (!password) {
+      errors.password = 'Password is required.';
+    } else if (password.length < 6) {
+      errors.password = 'Password must be at least 6 characters.';
+    }
+
+    setErrors(errors);
+    setIsFormValid(Object.keys(errors).length === 0);
+  };
+
+  const handleSubmit = () => {
+    if (isFormValid) {
+      console.log('Form submitted successfully!');
+    } else {
+      console.log('Form has errors. Please correct them.');
     }
   };
   return (
@@ -33,6 +82,8 @@ export default function Login() {
                 type="text"
                 required
                 placeholder="E-mail"
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
             </label>
@@ -51,14 +102,17 @@ export default function Login() {
                 type="Password"
                 placeholder="Password"
                 required
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-6 outline-none"
               />
             </label>
           </div>
           <div className="flex justify-between mx-auto w-[80%]"></div>
           <button
-            onClick={handleButtonClick}
+            onClick={handleSubmit}
             className="logo bg-blue-900 w-[80%] p-2  rounded-xl active:bg-blue-950"
+            disabled={!isFormValid}
           >
             Login
           </button>
