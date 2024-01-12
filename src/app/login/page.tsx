@@ -10,55 +10,55 @@ export default function Login() {
   //     inputRef.current.focus();
   //   }
   // };
-  type Errors = {
-    name?: string;
-    email?: string;
-    password?: string;
-  };
+  // type Errors = {
+  //   name?: string;
+  //   email?: string;
+  //   password?: string;
+  // };
   
-  type SetErrors = (errors: Errors) => void;
-  type SetIsFormValid = (isValid: boolean) => void;
+  // type SetErrors = (errors: Errors) => void;
+  // type SetIsFormValid = (isValid: boolean) => void;
 
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [errors, setErrors] = useState<Errors>({});
-  const [isFormValid, setIsFormValid] = useState<boolean>(false);
+  // const [name, setName] = useState<string>('');
+  // const [email, setEmail] = useState<string>('');
+  // const [password, setPassword] = useState<string>('');
+  // const [errors, setErrors] = useState<Errors>({});
+  // const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
-  useEffect(() => {
-    validateForm();
-  }, [name, email, password]);
+  // useEffect(() => {
+  //   validateForm();
+  // }, [name, email, password]);
 
-  const validateForm = () => {
-    let errors: Errors = {};
+  // const validateForm = () => {
+  //   let errors: Errors = {};
 
-    if (!name) {
-      errors.name = 'Name is required.';
-    }
+  //   if (!name) {
+  //     errors.name = 'Name is required.';
+  //   }
 
-    if (!email) {
-      errors.email = 'Email is required.';
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = 'Email is invalid.';
-    }
+  //   if (!email) {
+  //     errors.email = 'Email is required.';
+  //   } else if (!/\S+@\S+\.\S+/.test(email)) {
+  //     errors.email = 'Email is invalid.';
+  //   }
 
-    if (!password) {
-      errors.password = 'Password is required.';
-    } else if (password.length < 6) {
-      errors.password = 'Password must be at least 6 characters.';
-    }
+  //   if (!password) {
+  //     errors.password = 'Password is required.';
+  //   } else if (password.length < 6) {
+  //     errors.password = 'Password must be at least 6 characters.';
+  //   }
 
-    setErrors(errors);
-    setIsFormValid(Object.keys(errors).length === 0);
-  };
+  //   setErrors(errors);
+  //   setIsFormValid(Object.keys(errors).length === 0);
+  // };
 
-  const handleSubmit = () => {
-    if (isFormValid) {
-      console.log('Form submitted successfully!');
-    } else {
-      console.log('Form has errors. Please correct them.');
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (isFormValid) {
+  //     console.log('Form submitted successfully!');
+  //   } else {
+  //     console.log('Form has errors. Please correct them.');
+  //   }
+  // };
   return (
     <>
       <div className="min-h-[100dvh] mt-12 w-[90%] md:w-[40%] mx-auto ">
@@ -82,8 +82,8 @@ export default function Login() {
                 type="text"
                 required
                 placeholder="E-mail"
-                value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                // value={email}
+                // onChange={(e)=>setEmail(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
             </label>
@@ -102,8 +102,8 @@ export default function Login() {
                 type="Password"
                 placeholder="Password"
                 required
-                value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                // value={password}
+                // onChange={(e)=>setPassword(e.target.value)}
                 className="w-[80%] bg-transparent border-b-2 mb-6 outline-none"
               />
             </label>
