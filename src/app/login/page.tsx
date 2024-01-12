@@ -112,7 +112,7 @@ export default function Login() {
           <button
             onClick={handleSubmit}
             className="logo bg-blue-900 w-[80%] p-2  rounded-xl active:bg-blue-950"
-            disabled={!isFormValid}
+            // disabled={!isFormValid}
           >
             Login
           </button>
