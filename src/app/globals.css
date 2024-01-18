@@ -49,7 +49,7 @@ input {
 }
 
 .focused .placeholder,
-input:valid + .placeholder {
+  input:valid + .placeholder {
   transform: translateY(-150%);
   font-size: 0.8rem;
 }
