@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, SetStateAction } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 export default function Login() {
@@ -59,6 +59,84 @@ export default function Login() {
   //     console.log('Form has errors. Please correct them.');
   //   }
   // };
+  // const [email, setEmail] = useState('');
+  // const [isFocused, setIsFocused] = useState(false);
+  // // const inputRef = useRef();
+
+  // const handleInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+  //   setEmail(e.target.value);
+  // };
+
+  // const handleInputFocus = () => {
+  //   setIsFocused(true);
+  // };
+
+  // const handleInputBlur = () => {
+  //   setIsFocused(false);
+  // };
+
+  // const [wallet, setWallet] = useState('');
+  // const [isWalletFocused, setIsWalletFocused] = useState(false);
+  // // const inputRef = useRef();
+
+  // const walletInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+  //   setEmail(e.target.value);
+  // };
+
+  // const walletInputFocus = () => {
+  //   setIsFocused(true);
+  // };
+
+  // const walletInputBlur = () => {
+  //   setIsFocused(false);
+  // };
+  const [email, setEmail] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
+  const emailInputRef = useRef();
+
+  const handleInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setEmail(e.target.value);
+  };
+
+  const handleInputFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleInputBlur = () => {
+    setIsFocused(false);
+  };
+
+  const [wallet, setWallet] = useState('');
+  const [isWalletFocused, setIsWalletFocused] = useState(false);
+  const walletInputRef = useRef();
+
+  const walletInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setWallet(e.target.value);
+  };
+
+  const walletInputFocus = () => {
+    setIsWalletFocused(true);
+  };
+
+  const walletInputBlur = () => {
+    setIsWalletFocused(false);
+  };
+
+  const [password, setPassword] = useState('');
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+  const passwordInputRef = useRef();
+
+  const passwordInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setPassword(e.target.value);
+  };
+
+  const passwordInputFocus = () => {
+    setIsPasswordFocused(true);
+  };
+
+  const passwordInputBlur = () => {
+    setIsPasswordFocused(false);
+  };
   return (
     <>
       <div className="min-h-[100dvh] mt-12 w-[90%] md:w-[40%] mx-auto ">
@@ -76,36 +154,50 @@ export default function Login() {
             </h1>
           </div>
           <div>
-            <label htmlFor="">
+              <label htmlFor="email" className={` ${isFocused || email ? 'focused' : ''}`}>
+            <input
+              ref={inputRef}
+              type="text"
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
+              required
+              className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
+            />
+            <span className="placeholder">E-mail</span>
+          </label>
+            <label htmlFor="" className={` ${isWalletFocused || wallet ? 'focused' : ''}`}>
               <input
-                ref={inputRef}
-                type="text"
-                required
-                placeholder="E-mail"
-                // value={email}
-                // onChange={(e)=>setEmail(e.target.value)}
+                 ref={inputRef}
+                 type="text"
+                 id="Blockchain Wallet"
+                 name="Blockchain Wallet"
+                 value={wallet}
+                 onChange={walletInputChange}
+                 onFocus={walletInputFocus}
+                 onBlur={walletInputBlur}
+                 required
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
+               <span className="placeholder">Blockchain Wallet</span>
             </label>
-            <label htmlFor="">
+            <label htmlFor="" className={` ${isPasswordFocused || password ? 'focused' : ''}`}>
               <input
-                ref={inputRef}
-                type="text"
-                placeholder="Blockchain Wallet"
-                required
+                 ref={inputRef}
+                 type="text"
+                 id="password"
+                 name="password"
+                 value={password}
+                 onChange={passwordInputChange}
+                 onFocus={passwordInputFocus}
+                 onBlur={passwordInputBlur}
+                 required
                 className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
-            </label>
-            <label htmlFor="">
-              <input
-                ref={inputRef}
-                type="Password"
-                placeholder="Password"
-                required
-                // value={password}
-                // onChange={(e)=>setPassword(e.target.value)}
-                className="w-[80%] bg-transparent border-b-2 mb-6 outline-none"
-              />
+               <span className="placeholder">Password</span>
             </label>
           </div>
           <div className="flex justify-between mx-auto w-[80%]"></div>

@@ -27,6 +27,36 @@ body {
   background-image: url(./assets/Hero-bg.png);
 }
 
+label {
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 8px; /* Adjust this value to control the distance from the left */
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-out, font-size 0.3s ease-out;
+  font-size: 1rem;
+  color: #999;
+  pointer-events: none; /* This ensures that the placeholder does not interfere with cursor events */
+  z-index: 1; /* Ensure the placeholder is above the input */
+}
+
+input {
+  position: relative;
+  z-index: 2; /* Ensure the input is above the placeholder */
+}
+
+.focused .placeholder,
+input:valid + .placeholder {
+  transform: translateY(-150%);
+  font-size: 0.8rem;
+}
+
+
+
+
 .nav {
   color: white;
   background: rgba(255, 255, 255, 0.037);
