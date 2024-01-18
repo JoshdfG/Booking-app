@@ -49,7 +49,30 @@ export const useFormEffect = () => {
     setIsPasswordFocused(false);
   };
 
+  const [company, setCompany] = useState('');
+  const [isCompanyFocused, setIsCompanyFocused] = useState(false);
+  const companyInputRef = useRef();
+
+  const companyInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setCompany(e.target.value);
+  };
+
+  const companyInputFocus = () => {
+    setIsCompanyFocused(true);
+  };
+
+  const companyInputBlur = () => {
+    setIsCompanyFocused(false);
+  };
   return {
+    company,
+    setCompany,
+    isCompanyFocused,
+    setIsCompanyFocused,
+    companyInputRef,
+    companyInputChange,
+    companyInputFocus,
+    companyInputBlur,
     email,
     emailInputRef,
     isFocused,
