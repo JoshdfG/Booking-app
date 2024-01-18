@@ -64,6 +64,8 @@ export const useFormEffect = () => {
   const companyInputBlur = () => {
     setIsCompanyFocused(false);
   };
+
+ 
   return {
     company,
     setCompany,
