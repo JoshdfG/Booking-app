@@ -38,7 +38,7 @@ label {
   transform: translateY(-60%);
   transition: transform 0.3s ease-out, font-size 0.3s ease-out;
   font-size: .9rem;
-  color: #999;
+  /* color: #999; */
   pointer-events: none; /* This ensures that the placeholder does not interfere with cursor events */
   z-index: 1; /* Ensure the placeholder is above the input */
 }
@@ -50,7 +50,7 @@ input {
 
 .focused .placeholder,
   input:valid + .placeholder {
-  transform: translateY(-150%);
+  transform: translateY(-180%);
   font-size: 0.7rem;
 }
 
