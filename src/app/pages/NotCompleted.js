@@ -14,10 +14,10 @@ const NotCompleted = () => {
         cy="16"
         r="12"
         stroke="#8A8A8A"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-dasharray="4 6"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeDasharray="4 6"
       />
     </svg>
   );
