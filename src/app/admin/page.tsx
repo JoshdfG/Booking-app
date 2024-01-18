@@ -24,63 +24,7 @@ export default function Admin() {
       }, 200);
     }
   };
-  // type Errors = {
-  //   name?: string;
-  //   email?: string;
-  //   password?: string;
-  //   wallet?:string;
-  // };
-  
-  // type SetErrors = (errors: Errors) => void;
-  // type SetIsFormValid = (isValid: boolean) => void;
 
-  // const [name, setName] = useState<string>('');
-  // const [email, setEmail] = useState<string>('');
-  // const [password, setPassword] = useState<string>('');
-  // const [wallet, setWallet] = useState<string>('');
-  // const [errors, setErrors] = useState<Errors>({});
-  // const [isFormValid, setIsFormValid] = useState<boolean>(false);
-
-  // useEffect(() => {
-  //   validateForm();
-  // }, [name, email, password,wallet]);
-
-  // const validateForm = () => {
-  //   let errors: Errors = {};
-
-  //   if (!name) {
-  //     errors.name = 'Required!';
-  //   }
-
-  //   if (!email) {
-  //     errors.email = 'Required!';
-  //   } else if (!/\S+@\S+\.\S+/.test(email)) {
-  //     errors.email = 'Email is invalid.';
-  //   }
-
-  //   if (!password) {
-  //     errors.password = 'Required!';
-  //   } else if (password.length < 6) {
-  //     errors.password = 'Password must be at least 6 characters.';
-  //   }
-    
-  //   if (!wallet) {
-  //     errors.wallet = 'Required!';
-  //   } else if (password.length < 16) {
-  //     errors.wallet = 'Enter a valid wallet address.';
-  //   }
-
-  //   setErrors(errors);
-  //   setIsFormValid(Object.keys(errors).length === 0);
-  // };
-
-  // const handleSubmit = () => {
-  //   if (isFormValid) {
-  //     console.log('Form submitted successfully!');
-  //   } else {
-  //     console.log('Form has errors. Please correct them.');
-  //   }
-  // };
   const {
     company,
     setCompany,
