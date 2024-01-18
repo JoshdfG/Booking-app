@@ -34,8 +34,8 @@ label {
 .placeholder {
   position: absolute;
   top: 50%;
-  left: 8px; /* Adjust this value to control the distance from the left */
-  transform: translateY(-50%);
+  left: 2px; /* Adjust this value to control the distance from the left */
+  transform: translateY(-60%);
   transition: transform 0.3s ease-out, font-size 0.3s ease-out;
   font-size: 1rem;
   color: #999;

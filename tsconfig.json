@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "src/app/pages/admin/admin.tsx",
     "src/app/pages/plane.jsx"
-  ],
+, "src/app/loginEffect.js"  ],
   "exclude": ["node_modules"]
 }
