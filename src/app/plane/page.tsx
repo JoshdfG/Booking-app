@@ -185,7 +185,7 @@ const Plane = () => {
                         className=".react-datepicker__month-container textarea p-2 rounded-lg w-[75%] bg-slate-500 mb-8 outline-none text-white"
                       />
                     </label>
-                    </> ):(  
+                    </> ): (  
                     <label htmlFor="">
                       <div className="mb-3">
                         <p>Pick up date</p>
