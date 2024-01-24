@@ -27,7 +27,7 @@ body {
   background-image: url(./assets/Hero-bg.png);
 }
 
-label {
+.label {
   position: relative;
 }
 
@@ -43,7 +43,7 @@ label {
   z-index: 1; /* Ensure the placeholder is above the input */
 }
 
-input {
+.input {
   position: relative;
   z-index: 2; /* Ensure the input is above the placeholder */
 }
@@ -115,5 +115,5 @@ input {
 
 .datepicker-container {
   z-index: 5000; 
-  position: absolute;
+  position: relative;
 }

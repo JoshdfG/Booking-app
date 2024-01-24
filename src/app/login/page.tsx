@@ -43,7 +43,7 @@ export default function Login() {
             </h1>
           </div>
           <div>
-              <label htmlFor="email" className={` ${isFocused || email ? 'focused' : ''}`}>
+              <label htmlFor="email" className={`label ${isFocused || email ? 'focused' : ''}`}>
             <input
               ref={inputRef}
               type="text"
@@ -54,11 +54,11 @@ export default function Login() {
               onFocus={handleInputFocus}
               onBlur={handleInputBlur}
               required
-              className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
+              className="input w-[80%] bg-transparent border-b-2 mb-16 outline-none"
             />
             <span className="placeholder">E-mail</span>
           </label>
-            <label htmlFor="" className={` ${isWalletFocused || wallet ? 'focused' : ''}`}>
+            <label htmlFor="" className={`label ${isWalletFocused || wallet ? 'focused' : ''}`}>
               <input
                  ref={inputRef}
                  type="text"
@@ -69,11 +69,11 @@ export default function Login() {
                  onFocus={walletInputFocus}
                  onBlur={walletInputBlur}
                  required
-                className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
+                className="input w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
                <span className="placeholder">Blockchain Wallet</span>
             </label>
-            <label htmlFor="" className={` ${isPasswordFocused || password ? 'focused' : ''}`}>
+            <label htmlFor="" className={`label ${isPasswordFocused || password ? 'focused' : ''}`}>
               <input
                  ref={inputRef}
                  type="text"
@@ -84,7 +84,7 @@ export default function Login() {
                  onFocus={passwordInputFocus}
                  onBlur={passwordInputBlur}
                  required
-                className="w-[80%] bg-transparent border-b-2 mb-16 outline-none"
+                className="input w-[80%] bg-transparent border-b-2 mb-16 outline-none"
               />
                <span className="placeholder">Password</span>
             </label>
