@@ -40,7 +40,7 @@ body {
   transform: translateY(-60%);
   transition: transform 0.3s ease-out, font-size 0.3s ease-out;
   font-size: .9rem;
-  color: #999;
+  color: #b04f4f;
   pointer-events: none; 
   z-index: 1;
   background: transparent;
