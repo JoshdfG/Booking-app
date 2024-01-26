@@ -72,7 +72,7 @@ export default function Admin() {
             </h1>
           </div>
           <div className="relative">
-          <label htmlFor="" className={`label ${isCompanyFocused || company ? 'focused' : ''}`}>
+          <label htmlFor="" className={`label  ${isCompanyFocused || company ? 'focused' : ''}`}>
               <input
                  ref={inputRef}
                  type="text"
@@ -83,7 +83,7 @@ export default function Admin() {
                  onFocus={companyInputFocus}
                  onBlur={companyInputBlur}
                  required
-                className="input w-[80%] bg-transparent border-b-2 mb-16 outline-none"
+                className="input w-[80%] border-b-2 mb-16 outline-none "
               />
                <span className="placeholder">Company Name</span>
             </label>

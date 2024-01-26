@@ -29,23 +29,28 @@ body {
 
 .label {
   position: relative;
+  background: transparent;
+
 }
 
 .placeholder {
   position: absolute;
   top: 50%;
-  left: 2px; /* Adjust this value to control the distance from the left */
+  left: 2px;
   transform: translateY(-60%);
   transition: transform 0.3s ease-out, font-size 0.3s ease-out;
   font-size: .9rem;
   color: #999;
-  pointer-events: none; /* This ensures that the placeholder does not interfere with cursor events */
-  z-index: 1; /* Ensure the placeholder is above the input */
+  pointer-events: none; 
+  z-index: 1;
+  background: transparent;
+
 }
 
 .input {
   position: relative;
-  z-index: 2; /* Ensure the input is above the placeholder */
+  z-index: 2;
+  background: transparent;
 }
 
 .focused .placeholder,
@@ -53,8 +58,6 @@ body {
   transform: translateY(-180%);
   font-size: 0.7rem;
 }
-
-
 
 
 .nav {
